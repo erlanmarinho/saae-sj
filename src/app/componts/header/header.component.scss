@@ -1,0 +1,63 @@
+@import "../../../color-variables.scss";
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 6rem;
+  background-color: $primary-blue; // Cor de fundo do cabeçalho
+  color: $white;
+
+  .logo {
+    img {
+      height: 50px; // Altura do logotipo
+    }
+  }
+
+  nav {
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+
+      li {
+        a {
+          text-decoration: none;
+          color: #fff;
+          font-weight: bold;
+          transition: all 0.5s ease;
+
+
+          &.active {
+            background: $medium-blue; // #1d0292 Cor de fundo para o item ativo
+            color: $white;
+            padding: 8px;
+            border-radius: 0 8px;
+            border-bottom: 2px solid $light-green; // Destaque para o item ativo
+          }
+
+          &:hover {
+            background: $medium-blue;
+            padding: 8px;
+            border-radius: 0 8px;
+            border-bottom: 2px solid $white;
+
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsividade
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+
+    nav ul {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+}

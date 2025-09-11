@@ -1,0 +1,14 @@
+<header>
+  <div class="logo">
+    <img src="assets/logo.png" alt="Logo SAAE" />
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#">Início</a></li>
+      <li><a href="#" [class.active]="activeMenu === 'services'" (click)="setActive('services')">Serviços</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Notícias</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </nav>
+</header>
