@@ -1,0 +1,200 @@
+@import "../../../color-variables.scss";
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: -webkit-linear-gradient(250deg, $primary-blue, $light-green);
+  padding: 150px 20px;
+  width: 100%;
+
+
+  .years-foundation {
+    font-size: 20px;
+    font-weight: 700;
+    color: $white;
+
+    position: relative;
+    padding: 15px 20px; // Espaço interno para o conteúdo
+    margin-bottom: 20px;
+    border-radius: 8px; // Arredondamento das bordas
+
+
+    // Borda suave com gradiente simulada com box-shadow
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1),
+      0 0 3px 1px $light-green,
+      0 0 4px 1px $gray-100;
+  }
+
+  .title {
+    font-size: 48px;
+    font-weight: bold;
+    background: -webkit-linear-gradient(250deg, $light-green, $gray-100);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 100%; // Ajusta a largura para telas menores
+    max-width: 800px; // Define um limite máximo
+    text-align: center;
+    margin-bottom: 30px;
+    ;
+  }
+
+  p {
+    font-size: 20px;
+    font-weight: 300;
+    color: $white;
+    text-align: center;
+  }
+
+}
+
+.virtual-agency-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+
+
+
+  background: $gray-100;
+  padding: 50px 20px;
+
+  .virtual-agency {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: $gray-700;
+    margin-bottom: 20px;
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-weight: 400;
+    }
+
+  }
+
+  .services {
+    display: flex;
+    gap: 40px;
+    color: $gray-700;
+
+
+
+    .service-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        gap: 10px;
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+
+      h3,
+      p {
+        color: $gray-700;
+      }
+
+      .material-icons {
+        font-size: 48px;
+        color: $primary-blue;
+        transition: transform 0.3s ease, color 0.3s ease; // Transição suave para transformação e cor
+      }
+
+      .material-icons:hover {
+        color: $dark-blue;
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+
+      .material-symbols-outlined {
+        font-variation-settings:
+          'FILL' 0,
+          'wght' 500,
+          'GRAD' 0,
+          'opsz' 24
+      }
+    }
+  }
+}
+
+// Para telas menores que 1024px (tablets)
+@media (max-width: 1024px) {
+  .main-section {
+    padding: 100px 20px;
+
+    .title {
+      font-size: 36px; // Reduz o tamanho do título
+      width: 100%; // Ajusta a largura
+    }
+
+    p {
+      font-size: 18px; // Reduz o tamanho do texto
+    }
+  }
+
+  .services {
+    flex-direction: column; // Empilha os itens verticalmente
+    gap: 20px; // Reduz o espaçamento entre os itens
+  }
+}
+
+// Para telas menores que 768px (smartphones)
+@media (max-width: 768px) {
+  .main-section {
+    padding: 80px 15px;
+
+    .title {
+      font-size: 28px; // Reduz ainda mais o tamanho do título
+    }
+
+    p {
+      font-size: 16px; // Ajusta o tamanho do texto
+    }
+  }
+
+  .virtual-agency-section {
+    gap: 20px; // Reduz o espaçamento entre os elementos
+
+    .virtual-agency {
+      font-size: 16px; // Reduz o tamanho do texto
+    }
+  }
+
+  .services {
+    flex-direction: column; // Empilha os itens verticalmente
+
+    gap: 15px; // Reduz o espaçamento entre os itens
+
+    .service-item {
+      gap: 8px;
+      color: red;
+      flex-direction: column;
+
+      .material-icons {
+        font-size: 36px; // Reduz o tamanho dos ícones
+      }
+
+      h3 {
+        font-size: 16px; // Reduz o tamanho do título
+      }
+
+      p {
+        font-size: 14px; // Reduz o tamanho da descrição
+      }
+    }
+  }
+}
