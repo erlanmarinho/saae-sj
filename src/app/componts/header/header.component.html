@@ -2,13 +2,32 @@
   <div class="logo">
     <img src="assets/logo.png" alt="Logo SAAE" />
   </div>
-  <nav>
+  <nav [class.active]="menuActive">
     <ul>
-      <li><a href="#">Início</a></li>
-      <li><a href="#" [class.active]="activeMenu === 'services'" (click)="setActive('services')">Serviços</a></li>
-      <li><a href="#">Sobre</a></li>
-      <li><a href="#">Notícias</a></li>
-      <li><a href="#">Contato</a></li>
+      <li><a href="#" [class.active]="activeMenu === 'Início'" (click)="setActive('Início')">Início</a></li>
+      <li>
+        <a class="arrow_drop_down" href="#">
+          Serviços
+          <span class="material-icons ">arrow_drop_down</span>
+        </a>
+        <ul class="dropdown">
+          <div class="dropdown-content">
+            <li><a href="#">2ª Via de Conta</a></li>
+            <li><a href="#">Nova Ligação</a></li>
+            <li><a href="#">Vazamento</a></li>
+            <li><a href="#">Religação</a></li>
+            <li><a href="#">Atendimento Online</a></li>
+
+          </div>
+
+        </ul>
+      </li>
+      <li><a href="#" [class.active]="activeMenu === 'Sobre'" (click)="setActive('Sobre')">Sobre</a></li>
+      <li><a href="#" [class.active]="activeMenu === 'Notícias'" (click)="setActive('Notícias')">Notícias</a></li>
+      <li><a href="#" [class.active]="activeMenu === 'Contato'" (click)="setActive('Contato')">Contato</a></li>
     </ul>
   </nav>
+  <button class="menu-toggle" (click)="toggleMenu()">
+    <span class="material-icons">menu</span>
+  </button>
 </header>

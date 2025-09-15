@@ -5,12 +5,13 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 6rem;
-  background-color: $primary-blue; // Cor de fundo do cabeçalho
+  background-color: $primary-blue;
   color: $white;
+  border-bottom: 0.1px solid $gray-100;
 
   .logo {
     img {
-      height: 50px; // Altura do logotipo
+      height: 3.1rem;
     }
   }
 
@@ -21,43 +22,132 @@ header {
       gap: 2rem;
 
       li {
+        position: relative;
+
         a {
           text-decoration: none;
           color: #fff;
           font-weight: bold;
           transition: all 0.5s ease;
 
-
           &.active {
-            background: $medium-blue; // #1d0292 Cor de fundo para o item ativo
+            background: $medium-blue;
             color: $white;
-            padding: 8px;
-            border-radius: 0 8px;
-            border-bottom: 2px solid $light-green; // Destaque para o item ativo
+            padding: 0.2rem;
+            border-radius: 0 0.5rem;
+            border-bottom: 2px solid $light-green;
           }
 
           &:hover {
             background: $medium-blue;
-            padding: 8px;
-            border-radius: 0 8px;
-            border-bottom: 2px solid $white;
-
+            padding: 0.2rem;
+            border-radius: 0 0.5rem;
+            border-bottom: 1px solid $white;
           }
+        }
+
+        .arrow_drop_down {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+        }
+
+        /* ===== DROPDOWN ===== */
+        .dropdown {
+          display: none;
+          /* escondido por padrão */
+          position: absolute;
+          top: 100%;
+          left: 0;
+          list-style: none;
+          padding: 0.5rem 0;
+          //background-color: $primary-blue;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          border-radius: 4px;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          .dropdown-content {
+            display: flex;
+            width: 15rem;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 1rem 1rem;
+          }
+
+          li {
+            padding: 0.5rem 1rem;
+
+            a {
+              color: $white;
+
+              &:hover {
+                color: $light-green;
+              }
+            }
+          }
+        }
+
+        /* 🔑 abre quando o mouse está sobre o <li> */
+        &:hover .dropdown {
+          display: flex;
+        }
+
+        /* Se Angular adicionar a classe .open, também exibe */
+        .open {
+          display: flex;
         }
       }
     }
   }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: $white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
 }
 
-// Responsividade
-@media (max-width: 768px) {
+/* Responsividade */
+@media (max-width: 1024px) {
   header {
-    flex-direction: column;
-    text-align: center;
+    padding: 1rem;
 
     nav ul {
+      gap: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .menu-toggle {
+      display: block;
+    }
+
+    nav {
+      display: none;
+      width: 100%;
       flex-direction: column;
-      gap: 1rem;
+      background-color: $primary-blue;
+      padding: 1rem 0;
+
+      ul {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+
+    nav.active {
+      display: flex;
     }
   }
 }
