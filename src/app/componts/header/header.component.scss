@@ -9,6 +9,12 @@ header {
   color: $white;
   border-bottom: 0.1px solid $gray-100;
 
+  position: fixed; // Torna o header fixo no topo
+  top: 0; // Posiciona no topo da página
+  left: 0; // Alinha à esquerda
+  width: 100%; // Faz o header ocupar toda a largura da página
+  z-index: 1000;
+
   .logo {
     img {
       height: 3.1rem;
