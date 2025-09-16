@@ -1,5 +1,6 @@
 <app-header></app-header>
 <main>
+  <!-- SEÇÃO PRICIPAL -->
   <section class="main-section">
     <div class="years-foundation">
       <p>63 anos servindo São João do Soter</p>
@@ -12,6 +13,7 @@
     <p>Promovendo mais saúde e qualidade de vida pra população soterense.</p>
 
   </section>
+  <!-- SEÇÃO AGÊNCIA VIRTUAL -->
   <section class="virtual-agency-section">
     <div class="virtual-agency">
       <h2>Agência Virtual</h2>
@@ -55,4 +57,51 @@
       </div>
     </div>
   </section>
+
+  <!--SEÇÃO NOTÍCIAS -->
+  <section class="news-section">
+    <div class="news-header">
+      <h2>Notícias Recentes</h2>
+      <a href="#" class="see-all">Ver Todas</a>
+    </div>
+    <div class="carousel">
+      <div class="carousel-wrapper">
+        <div class="carousel-item">
+          <div class="news-card">
+            <img
+              src="https://painel.siganet.net.br/upload/0000000002/cms/images/thumbs/570x471_ccf24941832dc3984f4025bf970b63cd.jpg"
+              alt="Notícia 1" />
+            <h3>Manutenção Programada</h3>
+            <p>Haverá uma manutenção programada no sistema de abastecimento na próxima segunda-feira.</p>
+            <a href="#" class="read-more">Leia Mais</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="news-card">
+            <img
+              src="https://painel.siganet.net.br/upload/0000000002/cms/images/thumbs/570x471_ccf24941832dc3984f4025bf970b63cd.jpg"
+              alt="Notícia 2" />
+            <h3>Campanha de Conscientização</h3>
+            <p>Participe da nossa campanha de conscientização sobre o uso racional da água.</p>
+            <a href="#" class="read-more">Leia Mais</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="news-card">
+            <img
+              src="https://painel.siganet.net.br/upload/0000000002/cms/images/thumbs/570x471_ccf24941832dc3984f4025bf970b63cd.jpg"
+              alt="Notícia 3" />
+            <h3>Novos Serviços Online</h3>
+            <p>Agora você pode solicitar serviços diretamente pela nossa agência virtual.</p>
+            <a href="#" class="read-more">Leia Mais</a>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control prev" (click)="prevSlide()">&#10094;</button>
+      <button class="carousel-control next" (click)="nextSlide()">&#10095;</button>
+    </div>
+  </section>
+
+
+
 </main>

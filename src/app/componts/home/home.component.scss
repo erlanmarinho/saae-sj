@@ -58,7 +58,7 @@
 
 
 
-  background: $gray-100;
+  background: $light-blue;
   padding: 50px 20px;
 
   .virtual-agency {
@@ -127,6 +127,125 @@
           'GRAD' 0,
           'opsz' 24
       }
+    }
+  }
+}
+
+.news-section {
+  padding: 2rem;
+  background: $blue-100;
+  color: $gray-800;
+
+  .news-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1.5rem 0;
+
+    a {
+      text-decoration: none;
+      color: $medium-blue;
+
+      font-weight: bold;
+
+      &:hover {
+        color: $primary-blue;
+      }
+    }
+  }
+
+  .carousel {
+    position: relative;
+    //overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .carousel-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.5s ease-in-out;
+      gap: 20px;
+    }
+
+    .carousel-item {
+      flex: 0 0 33.33%; // 3 notícias por vez em telas maiores
+      box-sizing: border-box;
+
+
+
+      .news-card {
+        background-color: $light-blue;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
+          transition: box-shadow 0.3s ease, transform 0.3s ease; // Transição suave para sombra e transformação
+
+          &:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Sombra mais intensa ao passar o mouse
+            transform: scale(1.05); // Leve aumento no tamanho da imagem
+          }
+        }
+
+        h3 {
+          font-size: 18px;
+          margin: 10px 0;
+        }
+
+        p {
+          font-size: 14px;
+          color: $gray-700;
+          margin-bottom: 10px;
+        }
+
+        .read-more {
+          color: $primary-blue;
+          font-weight: bold;
+          text-decoration: none;
+
+          &:hover {
+            color: $light-green;
+          }
+        }
+      }
+    }
+
+    .carousel-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: $primary-blue;
+      cursor: pointer;
+
+      &.prev {
+        left: -1rem;
+      }
+
+      &.next {
+        right: -1rem;
+      }
+
+      &:hover {
+        color: $light-green;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .carousel-item {
+      flex: 0 0 100%; // 1 notícia por vez em telas menores
     }
   }
 }
