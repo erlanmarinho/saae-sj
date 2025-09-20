@@ -1,11 +1,12 @@
 import { Component, HostListener } from '@angular/core';
 
+import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'home',
   standalone: true,
-  imports: [HeaderComponent],
+  imports: [HeaderComponent, FooterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

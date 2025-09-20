@@ -243,9 +243,17 @@
     }
   }
 
+  /* Tablet: 2 cards */
+  @media (max-width: 1024px) {
+    .carousel-item {
+      flex: 0 0 50%;
+    }
+  }
+
+  /* Mobile: 1 card */
   @media (max-width: 768px) {
     .carousel-item {
-      flex: 0 0 100%; // 1 notícia por vez em telas menores
+      flex: 0 0 100%;
     }
   }
 }
