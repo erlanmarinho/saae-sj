@@ -64,14 +64,15 @@
       <h2>Notícias Recentes</h2>
       <a href="#" class="see-all">Ver Todas</a>
     </div>
+
     <div class="carousel">
-      <div class="carousel-wrapper">
-        <div class="carousel-item">''
+      <div class="carousel-wrapper" #carouselWrapper>
+        <div class="carousel-item">
           <div class="news-card">
             <img
               src="https://painel.siganet.net.br/upload/0000000002/cms/images/thumbs/570x471_ccf24941832dc3984f4025bf970b63cd.jpg"
-              alt="Notícia 1" />
-            <h3>Manutenção Programada</h3>
+              alt="Notícia 1">
+            <h3>Manutenção </h3>
             <p>Haverá uma manutenção programada no sistema de abastecimento na próxima segunda-feira.</p>
             <a href="#" class="read-more">Leia Mais</a>
           </div>
@@ -80,7 +81,7 @@
           <div class="news-card">
             <img
               src="https://painel.siganet.net.br/upload/0000000002/cms/images/thumbs/570x471_ccf24941832dc3984f4025bf970b63cd.jpg"
-              alt="Notícia 2" />
+              alt="Notícia 2">
             <h3>Campanha de Conscientização</h3>
             <p>Participe da nossa campanha de conscientização sobre o uso racional da água.</p>
             <a href="#" class="read-more">Leia Mais</a>
@@ -90,17 +91,19 @@
           <div class="news-card">
             <img
               src="https://painel.siganet.net.br/upload/0000000002/cms/images/thumbs/570x471_ccf24941832dc3984f4025bf970b63cd.jpg"
-              alt="Notícia 3" />
+              alt="Notícia 3">
             <h3>Novos Serviços Online</h3>
             <p>Agora você pode solicitar serviços diretamente pela nossa agência virtual.</p>
             <a href="#" class="read-more">Leia Mais</a>
           </div>
         </div>
       </div>
+
       <button class="carousel-control prev" (click)="prevSlide()">&#10094;</button>
       <button class="carousel-control next" (click)="nextSlide()">&#10095;</button>
     </div>
   </section>
+
 
   <app-footer></app-footer>
 

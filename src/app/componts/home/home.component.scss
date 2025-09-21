@@ -1,5 +1,6 @@
 @import "../../../color-variables.scss";
 
+// =================== MAIN SECTION ===================
 .main-section {
   display: flex;
   flex-direction: column;
@@ -9,35 +10,30 @@
   padding: 150px 20px;
   width: 100%;
 
-
   .years-foundation {
+    position: relative;
+    padding: 15px 20px; // Espaço interno
+    margin-bottom: 20px;
+    border-radius: 8px;
     font-size: 20px;
     font-weight: 700;
     color: $white;
-
-    position: relative;
-    padding: 15px 20px; // Espaço interno para o conteúdo
-    margin-bottom: 20px;
-    border-radius: 8px; // Arredondamento das bordas
-
-
-    // Borda suave com gradiente simulada com box-shadow
-    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1),
+    box-shadow:
+      0 0 2px 1px rgba(0, 0, 0, 0.1),
       0 0 3px 1px $light-green,
       0 0 4px 1px $gray-100;
   }
 
   .title {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 30px;
     font-size: 48px;
     font-weight: bold;
+    text-align: center;
     background: -webkit-linear-gradient(250deg, $light-green, $gray-100);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    width: 100%; // Ajusta a largura para telas menores
-    max-width: 800px; // Define um limite máximo
-    text-align: center;
-    margin-bottom: 30px;
-    ;
   }
 
   p {
@@ -46,27 +42,24 @@
     color: $white;
     text-align: center;
   }
-
 }
 
+// =================== VIRTUAL AGENCY ===================
 .virtual-agency-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 40px;
-
-
-
   background: $light-blue;
   padding: 50px 20px;
 
   .virtual-agency {
+    margin-bottom: 20px;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
     color: $gray-700;
-    margin-bottom: 20px;
 
     h2 {
       margin-bottom: 15px;
@@ -75,15 +68,12 @@
     p {
       font-weight: 400;
     }
-
   }
 
   .services {
     display: flex;
     gap: 40px;
     color: $gray-700;
-
-
 
     .service-item {
       display: flex;
@@ -97,11 +87,10 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        text-decoration: none;
         gap: 10px;
+        text-decoration: none;
         transition: transform 0.3s ease, color 0.3s ease;
       }
-
 
       h3,
       p {
@@ -111,7 +100,7 @@
       .material-icons {
         font-size: 48px;
         color: $primary-blue;
-        transition: transform 0.3s ease, color 0.3s ease; // Transição suave para transformação e cor
+        transition: transform 0.3s ease, color 0.3s ease;
       }
 
       .material-icons:hover {
@@ -125,14 +114,15 @@
           'FILL' 0,
           'wght' 500,
           'GRAD' 0,
-          'opsz' 24
+          'opsz' 24;
       }
     }
   }
 }
 
+// =================== NEWS SECTION ===================
 .news-section {
-  padding: 2rem;
+  padding: 3rem 2rem;
   background: $blue-100;
   color: $gray-800;
 
@@ -141,13 +131,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-
+    margin-bottom: 2rem;
     padding: 1.5rem 0;
 
     a {
       text-decoration: none;
       color: $medium-blue;
-
       font-weight: bold;
 
       &:hover {
@@ -158,41 +147,39 @@
 
   .carousel {
     position: relative;
-    //overflow: hidden;
+    overflow: hidden;
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
 
     .carousel-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
+      gap: 10px;
       transition: transform 0.5s ease-in-out;
-      gap: 20px;
     }
 
     .carousel-item {
-      flex: 0 0 33.33%; // 3 notícias por vez em telas maiores
-      box-sizing: border-box;
-
-
+      flex: 0 0 calc((100% - 2 * 1.5rem) / 3);
 
       .news-card {
-        background-color: $light-blue;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
         padding: 20px;
         text-align: center;
+        overflow: hidden;
+        background-color: $light-blue;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 
         img {
           width: 100%;
           height: auto;
           border-radius: 8px;
-          transition: box-shadow 0.3s ease, transform 0.3s ease; // Transição suave para sombra e transformação
+          transition: box-shadow 0.3s ease, transform 0.3s ease;
 
           &:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Sombra mais intensa ao passar o mouse
-            transform: scale(1.05); // Leve aumento no tamanho da imagem
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
           }
         }
 
@@ -230,81 +217,92 @@
       cursor: pointer;
 
       &.prev {
-        left: -1rem;
+        left: 0.5rem;
       }
 
       &.next {
-        right: -1rem;
-      }
-
-      &:hover {
-        color: $light-green;
+        right: 0.5rem;
       }
     }
   }
 
-  /* Tablet: 2 cards */
+  // ---- Responsive ----
   @media (max-width: 1024px) {
     .carousel-item {
-      flex: 0 0 50%;
+      flex: 0 0 calc((100% - 1.5rem) / 2);
     }
   }
 
-  /* Mobile: 1 card */
   @media (max-width: 768px) {
+    .carousel-wrapper {
+      gap: 1rem;
+    }
+
     .carousel-item {
       flex: 0 0 100%;
+    }
+
+    .news-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .carousel-item {
+      min-width: 100%;
     }
   }
 }
 
-// Para telas menores que 1024px (tablets)
+// =================== GLOBAL RESPONSIVE ===================
+// Tablets
 @media (max-width: 1024px) {
   .main-section {
     padding: 100px 20px;
 
     .title {
-      font-size: 36px; // Reduz o tamanho do título
-      width: 100%; // Ajusta a largura
+      font-size: 36px;
+      width: 100%;
     }
 
     p {
-      font-size: 18px; // Reduz o tamanho do texto
+      font-size: 18px;
     }
   }
 
   .services {
-    flex-direction: column; // Empilha os itens verticalmente
-    gap: 20px; // Reduz o espaçamento entre os itens
+    flex-direction: column;
+    gap: 20px;
   }
 }
 
-// Para telas menores que 768px (smartphones)
+// Smartphones
 @media (max-width: 768px) {
   .main-section {
     padding: 80px 15px;
 
     .title {
-      font-size: 28px; // Reduz ainda mais o tamanho do título
+      font-size: 28px;
     }
 
     p {
-      font-size: 16px; // Ajusta o tamanho do texto
+      font-size: 16px;
     }
   }
 
   .virtual-agency-section {
-    gap: 20px; // Reduz o espaçamento entre os elementos
+    gap: 20px;
 
     .virtual-agency {
-      font-size: 16px; // Reduz o tamanho do texto
+      font-size: 16px;
     }
   }
 
   .services {
-    flex-direction: column; // Empilha os itens verticalmente
-
-    gap: 15px; // Reduz o espaçamento entre os itens
+    flex-direction: column;
+    gap: 15px;
 
     .service-item {
       gap: 8px;
@@ -312,15 +310,15 @@
       flex-direction: column;
 
       .material-icons {
-        font-size: 36px; // Reduz o tamanho dos ícones
+        font-size: 36px;
       }
 
       h3 {
-        font-size: 16px; // Reduz o tamanho do título
+        font-size: 16px;
       }
 
       p {
-        font-size: 14px; // Reduz o tamanho da descrição
+        font-size: 14px;
       }
     }
   }

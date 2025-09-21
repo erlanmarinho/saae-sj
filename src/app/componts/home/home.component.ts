@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
@@ -11,28 +11,56 @@ import { HeaderComponent } from '../header/header.component';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  currentSlide: number = 0;
-  slidesPerView: number = 3; // Padrão: 3 notícias por vez
+  @ViewChild('carouselWrapper') carousel!: ElementRef<HTMLDivElement>;
+  currentSlide = 0;
+  itemWidth = 0;
 
-  @HostListener('window:resize')
-  onResize() {
-    const screenWidth = window.innerWidth;
-    this.slidesPerView = screenWidth <= 768 ? 1 : 3; // Ajusta para 1 notícia em telas menores
+  ngAfterViewInit() {
+    if (typeof window !== 'undefined') {
+      this.calculateItemWidth();
+      window.addEventListener('resize', () => this.calculateItemWidth());
+    }
   }
 
-  prevSlide() {
-    const carouselWrapper = document.querySelector('.carousel-wrapper') as HTMLElement;
-    const totalSlides = carouselWrapper.children.length;
 
-    this.currentSlide = (this.currentSlide - 1 + totalSlides) % totalSlides;
-    carouselWrapper.style.transform = `translateX(-${(this.currentSlide / this.slidesPerView) * 100}%)`;
+
+
+  prevSlide() {
+    if (this.currentSlide > 0) {
+      this.currentSlide--;
+      this.updateSlidePosition();
+    }
   }
 
   nextSlide() {
-    const carouselWrapper = document.querySelector('.carousel-wrapper') as HTMLElement;
-    const totalSlides = carouselWrapper.children.length;
-
-    this.currentSlide = (this.currentSlide + 1) % totalSlides;
-    carouselWrapper.style.transform = `translateX(-${(this.currentSlide / this.slidesPerView) * 100}%)`;
+    const wrapper = this.carousel.nativeElement;
+    const maxSlide = wrapper.children.length - 1;
+    if (this.currentSlide < maxSlide) {
+      this.currentSlide++;
+      this.updateSlidePosition();
+    }
   }
+
+  updateSlidePosition() {
+    if (this.carousel) {
+      this.carousel.nativeElement.style.transform = `translateX(-${this.currentSlide * this.itemWidth}px)`;
+    }
+  }
+
+  calculateItemWidth() {
+    // só executa se estivermos no navegador
+    if (typeof window === 'undefined' || !this.carousel) return;
+
+    const wrapper = this.carousel.nativeElement;
+    const item = wrapper.children[0] as HTMLElement;
+    if (!item) return;
+
+    const style = window.getComputedStyle(wrapper);
+    const gap = parseInt(style.gap || '0', 10);
+    this.itemWidth = item.offsetWidth + gap;
+
+    this.updateSlidePosition();
+  }
+
+
 }
