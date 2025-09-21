@@ -12,6 +12,8 @@ export class HeaderComponent {
   menuActive: boolean = false;
   dropdownActive: boolean = false;
   activeMenu: string = '';
+  submenuOpen = false;
+
 
   toggleMenu() {
     this.menuActive = !this.menuActive;

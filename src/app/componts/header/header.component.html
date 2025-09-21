@@ -5,18 +5,33 @@
   <nav [class.active]="menuActive">
     <ul>
       <li><a href="#" [class.active]="activeMenu === 'Início'" (click)="setActive('Início')">Início</a></li>
-      <li>
-        <a class="arrow_drop_down" href="#">
+      <li [class.open]="submenuOpen" (click)="submenuOpen = !submenuOpen">
+        <a class="arrow_drop_down services-dropdown" href="#">
           Serviços
           <span class="material-icons ">arrow_drop_down</span>
         </a>
         <ul class="dropdown">
           <div class="dropdown-content">
-            <li><a href="#">2ª Via de Conta</a></li>
-            <li><a href="#">Nova Ligação</a></li>
-            <li><a href="#">Vazamento</a></li>
-            <li><a href="#">Religação</a></li>
-            <li><a href="#">Atendimento Online</a></li>
+            <li><a href="#">
+                <span class="material-symbols-outlined thin-icon">arrow_right</span>
+                Segunda Via
+              </a></li>
+            <li><a href="#">
+                <span class="material-symbols-outlined thin-icon">arrow_right</span>
+                Nova Ligação
+              </a></li>
+            <li><a href="#">
+                <span class="material-symbols-outlined thin-icon">arrow_right</span>
+                Vazamento
+              </a></li>
+            <li><a href="#">
+                <span class="material-symbols-outlined thin-icon">arrow_right</span>
+                Religação
+              </a></li>
+            <li><a href="#">
+                <span class="material-symbols-outlined thin-icon">arrow_right</span>
+                Atendimento Online
+              </a></li>
 
           </div>
 

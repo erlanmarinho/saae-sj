@@ -4,71 +4,66 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 6rem;
+  padding: 2rem 6rem;
   background-color: $primary-blue;
   color: $white;
   border-bottom: 0.1px solid $gray-100;
 
-  position: fixed; // Torna o header fixo no topo
-  top: 0; // Posiciona no topo da página
-  left: 0; // Alinha à esquerda
-  width: 100%; // Faz o header ocupar toda a largura da página
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
 
-  .logo {
-    img {
-      height: 3.1rem;
-    }
+  .logo img {
+    height: 3.1rem;
   }
 
   nav {
     ul {
       display: flex;
       list-style: none;
-      gap: 2rem;
+      gap: 3rem;
 
       li {
         position: relative;
+        display: flex;
+        align-items: center;
+
 
         a {
           text-decoration: none;
           color: #fff;
           font-weight: bold;
           transition: all 0.5s ease;
+          display: flex;
+          align-items: center;
 
           &.active {
             background: $medium-blue;
             color: $white;
-            padding: 0.2rem;
-            border-radius: 0 0.5rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem 0.5rem;
             border-bottom: 2px solid $light-green;
           }
 
           &:hover {
             background: $medium-blue;
-            padding: 0.2rem;
-            border-radius: 0 0.5rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem 0.5rem;
             border-bottom: 1px solid $white;
           }
         }
 
-        .arrow_drop_down {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
-        }
-
-        /* ===== DROPDOWN ===== */
+        /* ====== Dropdown desktop ====== */
         .dropdown {
           display: none;
-          /* escondido por padrão */
           position: absolute;
           top: 100%;
           left: 0;
           list-style: none;
-          padding: 0.5rem 0;
           //background-color: $primary-blue;
+          padding: 0.5rem 0;
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
           border-radius: 4px;
           flex-direction: column;
@@ -78,30 +73,24 @@ header {
             display: flex;
             width: 15rem;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 1rem;
             padding: 1rem 1rem;
           }
 
-          li {
-            padding: 0.5rem 1rem;
+          li a {
+            color: $white;
 
-            a {
-              color: $white;
-
-              &:hover {
-                color: $light-green;
-              }
+            &:hover {
+              width: 100%;
+              background: $white;
+              color: $primary-blue;
+              border-radius: 0.5rem;
+              padding: 0.5rem 1rem;
             }
           }
         }
 
-        /* 🔑 abre quando o mouse está sobre o <li> */
         &:hover .dropdown {
-          display: flex;
-        }
-
-        /* Se Angular adicionar a classe .open, também exibe */
-        .open {
           display: flex;
         }
       }
@@ -115,45 +104,71 @@ header {
     color: $white;
     font-size: 2rem;
     cursor: pointer;
+    z-index: 1100;
   }
 }
 
-/* Responsividade */
-@media (max-width: 1024px) {
-  header {
-    padding: 1rem;
-
-    nav ul {
-      gap: 1.5rem;
-    }
-  }
-}
-
+/* ======= MOBILE ========= */
 @media (max-width: 768px) {
   header {
-    flex-wrap: wrap;
-    justify-content: space-between;
+    padding: 1rem 1.5rem;
 
     .menu-toggle {
       display: block;
     }
 
     nav {
-      display: none;
-      width: 100%;
-      flex-direction: column;
+      position: fixed;
+      top: 0;
+      right: -100%; // escondido
+      height: 100vh; // ocupa altura total
+      width: 80%; // largura do painel
+      max-width: 320px;
       background-color: $primary-blue;
-      padding: 1rem 0;
+      flex-direction: column;
+      padding: 4rem 2rem 2rem;
+      transition: right 0.3s ease;
+      box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+      overflow-y: auto;
 
       ul {
         flex-direction: column;
-        gap: 1rem;
-        text-align: center;
+        gap: 1.5rem;
+        width: 100%;
       }
-    }
 
-    nav.active {
-      display: flex;
+      &.active {
+        right: 0;
+      }
+
+      /* === Submenu no mobile === */
+      ul li {
+        width: 100%;
+
+        .arrow_drop_down {
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          width: 100%;
+        }
+
+        .dropdown {
+          position: static; // sem absolute
+          box-shadow: none;
+          background: none;
+          padding: 0;
+          display: none;
+
+          .dropdown-content {
+            width: 100%;
+            padding: 0.5rem 0 0.5rem 1rem;
+          }
+        }
+
+        &.open>.dropdown {
+          display: flex;
+        }
+      }
     }
   }
 }
