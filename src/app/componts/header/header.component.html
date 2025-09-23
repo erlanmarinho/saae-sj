@@ -2,46 +2,37 @@
   <div class="logo">
     <img src="assets/logo.png" alt="Logo SAAE" />
   </div>
+
   <nav [class.active]="menuActive">
     <ul>
-      <li><a href="#" [class.active]="activeMenu === 'Início'" (click)="setActive('Início')">Início</a></li>
+      <li>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          Início
+        </a>
+      </li>
+
       <li [class.open]="submenuOpen" (click)="submenuOpen = !submenuOpen">
-        <a class="arrow_drop_down services-dropdown" href="#">
+        <a class="arrow_drop_down services-dropdown" routerLink="/services" routerLinkActive="active">
           Serviços
-          <span class="material-icons ">arrow_drop_down</span>
+          <span class="material-icons">arrow_drop_down</span>
         </a>
         <ul class="dropdown">
           <div class="dropdown-content">
-            <li><a href="#">
-                <span class="material-symbols-outlined thin-icon">arrow_right</span>
-                Segunda Via
-              </a></li>
-            <li><a href="#">
-                <span class="material-symbols-outlined thin-icon">arrow_right</span>
-                Nova Ligação
-              </a></li>
-            <li><a href="#">
-                <span class="material-symbols-outlined thin-icon">arrow_right</span>
-                Vazamento
-              </a></li>
-            <li><a href="#">
-                <span class="material-symbols-outlined thin-icon">arrow_right</span>
-                Religação
-              </a></li>
-            <li><a href="#">
-                <span class="material-symbols-outlined thin-icon">arrow_right</span>
-                Atendimento Online
-              </a></li>
-
+            <li><a routerLink="/services/second-copy" routerLinkActive="active">Segunda Via</a></li>
+            <li><a routerLink="/services/new-connection" routerLinkActive="active">Nova Ligação</a></li>
+            <li><a routerLink="/services/leak" routerLinkActive="active">Vazamento</a></li>
+            <li><a routerLink="/services/reconnection" routerLinkActive="active">Religação</a></li>
+            <li><a routerLink="/services/online-support" routerLinkActive="active">Atendimento Online</a></li>
           </div>
-
         </ul>
       </li>
-      <li><a href="#" [class.active]="activeMenu === 'Sobre'" (click)="setActive('Sobre')">Sobre</a></li>
-      <li><a href="#" [class.active]="activeMenu === 'Notícias'" (click)="setActive('Notícias')">Notícias</a></li>
-      <li><a href="#" [class.active]="activeMenu === 'Contato'" (click)="setActive('Contato')">Contato</a></li>
+
+      <li><a routerLink="/about" routerLinkActive="active">Sobre</a></li>
+      <li><a routerLink="/news" routerLinkActive="active">Notícias</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active">Contato</a></li>
     </ul>
   </nav>
+
   <button class="menu-toggle" (click)="toggleMenu()">
     <span class="material-icons">menu</span>
   </button>

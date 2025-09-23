@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
-import { FooterComponent } from '../footer/footer.component';
-import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../../componts/footer/footer.component';
+import { HeaderComponent } from '../../componts/header/header.component';
 
 @Component({
   selector: 'home',
