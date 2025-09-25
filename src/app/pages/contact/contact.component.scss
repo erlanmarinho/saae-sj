@@ -1,0 +1,278 @@
+@import "../../../color-variables.scss";
+
+.contact-section {
+  padding: 8rem 2rem;
+  background: linear-gradient(250deg, $primary-blue, $light-green);
+  color: #fff;
+  text-align: center;
+
+  .container {
+    display: flex;
+    gap: 9rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-header {
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+
+      span {
+        color: $orange-400;
+      }
+    }
+
+    p {
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+  }
+
+  .contact-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // 4 cards por linha por padrão
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+    .card {
+      flex: 1 1 200px;
+
+      max-width: 220px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+      }
+
+      i {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      h3 {
+        font-size: 1.8rem;
+        margin: 0.3rem 0;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      &.bg-green {
+        background-color: rgba($green-500, 0.3);
+      }
+
+      &.bg-orange {
+        background-color: rgba($orange-500, 0.7);
+      }
+
+      &.bg-blue {
+        background-color: rgba($medium-blue, 0.3);
+      }
+
+      &.bg-purple {
+        // background-color: rgba($purple-500, 0.3);
+      }
+    }
+  }
+
+  .contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    .btn-primary,
+    .btn-secondary {
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      border: none;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background-color: $white;
+      color: $primary-blue;
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border: 2px solid $white;
+      color: $white;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .contact-cards {
+      grid-template-columns: repeat(2, 1fr); // 2 cards por linha
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contact-buttons {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+  .cantact-location {
+    margin-top: 2rem;
+    width: 100%;
+    height: 400px;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 8px; // opcional, arredonda os cantos
+    }
+  }
+
+  /* Ajuste para telas menores */
+  @media (max-width: 768px) {
+    .cantact-location {
+      height: 300px;
+    }
+  }
+
+}
+
+.information-section {
+  padding: 4rem 1rem;
+  background-color: #f9f9f9;
+
+  .wrap {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    // Contato à esquerda
+    .contact-information {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: $gray-800;
+      }
+
+      .wrap-fone,
+      div {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background: $white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+        i,
+        .thin-icon {
+          font-size: 2rem;
+          color: #4caf50; // cor padrão ícones
+        }
+
+        p {
+
+          font-weight: 600;
+          margin: 0;
+          color: $gray-800;
+        }
+
+        span {
+          display: block;
+          font-size: 0.9rem;
+          color: $gray-700;
+        }
+      }
+
+      .thin-icon.email {
+        color: #ff9800;
+      }
+
+      .thin-icon.location {
+        color: #2196f3;
+      }
+
+      .thin-icon.clock {
+        color: #9c27b0;
+      }
+    }
+
+    // Mapa à direita
+    .cantact-location {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: $gray-800;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        min-height: 400px;
+        border: 0;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  // Responsivo: mobile e tablets
+  @media (max-width: 768px) {
+    .wrap {
+      flex-direction: column;
+
+      .contact-information,
+      .cantact-location {
+        width: 100%;
+
+        .info-item {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      .cantact-location iframe {
+        min-height: 300px;
+      }
+    }
+  }
+}
