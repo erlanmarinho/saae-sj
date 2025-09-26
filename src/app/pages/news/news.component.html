@@ -1,0 +1,174 @@
+<main class="news-page">
+  <app-header></app-header>
+  <section class="news-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Notícias</h1>
+      <p>Acompanhe as últimas notícias, comunicados e atualizações do SAAE Caxias.</p>
+    </div>
+  </section>
+
+  <section class="news-end">
+    <div class="new-header">
+      <h2>Últimas Atualizações</h2>
+      <p>Fique informado sobre as principais novidades e comunicados do SAAE</p>
+    </div>
+    <div class="carousel">
+
+      <div class="carousel-wrapper" #carouselWrapper>
+        <div class="carousel-item">
+          <div class="news-card">
+            <img
+              src="https://painel.siganet.net.br/upload/0000000002/cms/images/thumbs/570x471_ccf24941832dc3984f4025bf970b63cd.jpg"
+              alt="Notícia 1">
+            <h3>Manutenção </h3>
+            <p>Haverá uma manutenção programada no sistema de abastecimento na próxima segunda-feira.</p>
+            <div class="data">
+              <div class="calendar">
+
+                <span class="material-symbols-outlined thin-icon email">calendar_today</span>
+                <p>
+                  25 de setembro
+                </p>
+              </div>
+
+              <div class="visibility">
+                <span class="material-symbols-outlined thin-icon email">visibility</span>
+                <p>56</p>
+              </div>
+            </div>
+            <a href="#" class="read-more">Leia Mais</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="news-card">
+            <img
+              src="https://painel.siganet.net.br/upload/0000000002/cms/images/thumbs/570x471_ccf24941832dc3984f4025bf970b63cd.jpg"
+              alt="Notícia 2">
+            <h3>Campanha de Conscientização</h3>
+            <p>Participe da nossa campanha de conscientização sobre o uso racional da água.</p>
+            <div class="data">
+              <div class="calendar">
+
+                <span class="material-symbols-outlined thin-icon email">calendar_today</span>
+                <p>
+                  25 de setembro
+                </p>
+              </div>
+
+              <div class="visibility">
+                <span class="material-symbols-outlined thin-icon email">visibility</span>
+                <p>56</p>
+              </div>
+            </div>
+            <a href="#" class="read-more">Leia Mais</a>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel-control prev">Ver Todas as Notícias</button>
+
+    </div>
+  </section>
+
+  <section class="filter-section">
+    <div class="filter-header">
+      <h2>Filtros de Notícias</h2>
+      <p>2 resultados encontrados</p>
+    </div>
+
+    <div class="filter-controls">
+      <input type="text" placeholder="Buscar por título ou conteúdo..." />
+
+      <select>
+        <option value="">Todas as categorias</option>
+        <option value="avisos">Avisos</option>
+        <option value="eventos">Eventos</option>
+      </select>
+
+      <select>
+        <option value="recentes">Mais recentes</option>
+        <option value="antigos">Mais antigos</option>
+      </select>
+
+      <button class="advanced-btn" (click)="modoAvancado = !modoAvancado">
+        <span class="material-symbols-outlined">tune</span>
+        Avançado
+      </button>
+    </div>
+
+    <!-- Campos avançados -->
+    <div class="filter-controls advanced-fields" *ngIf="modoAvancado">
+
+      <!-- Nova seção de Períodos -->
+      <div class="period-buttons">
+        <span class="period active">Todos</span>
+        <span class="period">Última semana</span>
+        <span class="period">Último mês</span>
+        <span class="period">Último ano</span>
+      </div>
+
+      <select>
+        <option value="">Tipo</option>
+        <option value="noticia">Notícia</option>
+        <option value="evento">Evento</option>
+      </select>
+
+      <select>
+        <option value="">Todas</option>
+        <option value="Mais de 100">Mais de 100</option>
+        <option value="Mais de 500">Mais de 500</option>
+      </select>
+
+
+
+    </div>
+  </section>
+
+
+
+
+
+
+  <section class="news-list">
+    <!-- Exemplo de item de notícia -->
+    <article class="news-item">
+      <div class="news-item__thumb">
+        <img src="caminho/para-imagem.jpg" alt="Imagem da notícia" />
+      </div>
+      <div class="news-item__info">
+        <div class="news-item__meta">
+          <span class="news-item__date">04 de setembro de 2025</span>
+          <span class="news-item__category">Avisos</span>
+        </div>
+        <h2 class="news-item__title">SAAE Caxias marca presença no 53° Congresso Nacional de Saneamento</h2>
+        <p class="news-item__excerpt">Texto de exemplo com um resumo da notícia para apresentar ao leitor …</p>
+        <a href="/noticia/slug" class="news-item__link">Ler a matéria completa →</a>
+      </div>
+    </article>
+
+    <!-- repetir outros artigos conforme os dados disponíveis -->
+  </section>
+
+  <section class="news-stats">
+    <div class="stats-container">
+      <div class="stats-box">
+        <strong>Notícias Publicadas</strong>
+        <span>156+</span>
+      </div>
+      <div class="stats-box">
+        <strong>Categorias Ativas</strong>
+        <span>4</span>
+      </div>
+      <div class="stats-box">
+        <strong>Atualizações/Mês</strong>
+        <span>24+</span>
+      </div>
+    </div>
+  </section>
+
+  <app-footer></app-footer>
+
+
+</main>

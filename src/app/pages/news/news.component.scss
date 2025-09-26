@@ -1,0 +1,265 @@
+@import "../../../color-variables.scss";
+
+.news-page {
+
+  /* ---------- HERO ---------- */
+  .news-hero {
+    text-align: center;
+    background: -webkit-linear-gradient(250deg, $primary-blue, $light-green);
+    margin-top: 6rem;
+    padding: 2rem 1rem;
+
+    .hero-content {
+      color: $white;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  /* ---------- HEADER DE NOTÍCIAS ---------- */
+  .new-header {
+    padding: 2rem;
+    text-align: center;
+
+    h2 {
+      color: $primary-blue;
+      font-size: 2rem;
+    }
+
+    p {
+      color: $gray-800;
+    }
+  }
+
+  /* ---------- CAROUSEL ---------- */
+  .carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    .carousel-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-item {
+      flex: 0 0 calc((100% - 2 * 1.5rem) / 3);
+
+      .news-card {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        background-color: $light-blue;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+        img {
+          width: 100%;
+          border-radius: 8px;
+          transition: 0.3s;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+
+        .data {
+          display: flex;
+          justify-content: space-between;
+          padding: 1rem;
+          border-bottom: 1px solid $blue-100;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .carousel-control {
+      background: $primary-blue;
+      color: $white;
+      border: none;
+      padding: 0.7rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+
+      &:hover {
+        background: darken($primary-blue, 10%);
+        transform: scale(1.05);
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+
+  /* ---------- FILTRO DE NOTÍCIAS ---------- */
+  .filter-section {
+    background: $blue-200;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 1200px;
+    margin: 3rem auto 2rem;
+
+    .filter-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      h2 {
+        color: $primary-blue;
+        font-size: 1.5rem;
+        margin: 0;
+      }
+
+      p {
+        color: $gray-500;
+        margin: 0;
+      }
+    }
+
+    .filter-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+
+
+      input,
+      select {
+        flex: 1 1 200px;
+        border: 1px solid $gray-300;
+        border-radius: 8px;
+        padding: 0.6rem 0.8rem;
+        font-size: 1rem;
+        background: $white;
+
+        &:focus {
+          border-color: $primary-blue;
+          outline: none;
+        }
+      }
+
+      .advanced-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: $primary-blue;
+        color: $white;
+        border: none;
+        border-radius: 8px;
+        padding: 0.6rem 1rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background: darken($primary-blue, 8%);
+        }
+      }
+
+      &.advanced-fields {
+        margin-top: 2rem;
+        border-top: $light-blue 1px solid;
+        padding-top: 2rem;
+
+        // NOVO: Botões de período
+        .period-buttons {
+          display: flex;
+          gap: 0.5rem;
+          margin-bottom: 1rem;
+
+          .period {
+            padding: 0.5rem 1rem;
+            background: $blue-100;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+
+            &.active,
+            &:hover {
+              background: $primary-blue;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+  /* ---------- LISTA DE NOTÍCIAS ---------- */
+  .news-list {
+    max-width: 1200px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+
+    .news-item {
+      background: $white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+
+      &__thumb img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      &__info {
+        padding: 1rem;
+      }
+    }
+  }
+
+  /* ---------- RESPONSIVIDADE ---------- */
+  @media (max-width: 1024px) {
+    .carousel-item {
+      flex: 0 0 calc((100% - 1.5rem) / 2);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .carousel-item {
+      flex: 0 0 100%;
+    }
+
+    .filter-section .filter-controls {
+      flex-direction: column;
+
+      input,
+      select,
+      .advanced-btn {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-content h1 {
+      font-size: 1.8rem;
+    }
+  }
+}
