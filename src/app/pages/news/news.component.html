@@ -25,11 +25,8 @@
             <p>Haverá uma manutenção programada no sistema de abastecimento na próxima segunda-feira.</p>
             <div class="data">
               <div class="calendar">
-
                 <span class="material-symbols-outlined thin-icon email">calendar_today</span>
-                <p>
-                  25 de setembro
-                </p>
+                <p>25 de setembro</p>
               </div>
 
               <div class="visibility">
@@ -74,23 +71,31 @@
 
   <section class="filter-section">
     <div class="filter-header">
-      <h2>Filtros de Notícias</h2>
+      <div class="icon-filter">
+        <span class="material-symbols-outlined icon">filter_alt</span>
+        <h2>Filtros de Notícias</h2>
+      </div>
       <p>2 resultados encontrados</p>
     </div>
 
     <div class="filter-controls">
-      <input type="text" placeholder="Buscar por título ou conteúdo..." />
+      <input class="text" type="text" placeholder="Buscar por título ou conteúdo..." />
 
-      <select>
-        <option value="">Todas as categorias</option>
-        <option value="avisos">Avisos</option>
-        <option value="eventos">Eventos</option>
-      </select>
+      <app-custom-select class="custo-select" [options]="[
+        { value: '', label: 'Todas as categorias' },
+        { value: 'avisos', label: 'Avisos' },
+        { value: 'abastecimento', label: 'Abastecimento' },
+        { value: 'institucional', label: 'Institucional' }
+      ]" (selectedValueChange)="onCategoriaChange($event)"></app-custom-select>
 
-      <select>
-        <option value="recentes">Mais recentes</option>
-        <option value="antigos">Mais antigos</option>
-      </select>
+      <app-custom-select [options]="[
+        { value: 'recentes', label: 'Mais recentes' },
+        { value: 'mais-vistas', label: 'Mais visitadas' },
+        { value: 'relevancia', label: 'Relevância' }
+      ]" (selectedValueChange)="onOrdenacaoChange($event)"></app-custom-select>
+
+
+
 
       <button class="advanced-btn" (click)="modoAvancado = !modoAvancado">
         <span class="material-symbols-outlined">tune</span>
@@ -109,44 +114,72 @@
         <span class="period">Último ano</span>
       </div>
 
-      <select>
-        <option value="">Tipo</option>
-        <option value="noticia">Notícia</option>
-        <option value="evento">Evento</option>
-      </select>
+      <app-custom-select [options]="[
+        { value: '', label: 'Todos os tipo' },
+        { value: 'Urgentes', label: 'Urgentes' },
+        { value: 'Em destaque', label: 'Em destaque' },
+        { value: 'Normais', label: 'Normais' }
+      ]" (selectedValueChange)="onCategoriaChange($event)"></app-custom-select>
 
-      <select>
-        <option value="">Todas</option>
-        <option value="Mais de 100">Mais de 100</option>
-        <option value="Mais de 500">Mais de 500</option>
-      </select>
+      <app-custom-select [options]="[
+        
+        { value: 'Mais recentes', label: 'Mais recentes' },
+        { value: 'Mais antigos', label: 'Mais antigos' }
+      ]" (selectedValueChange)="onCategoriaChange($event)"></app-custom-select>
+
 
 
 
     </div>
+    <!-- Badge da categoria -->
+    <div class="active-filters">
+      <span *ngFor="let filtro of filtrosAtivos" class="filter-badge" [ngClass]="getBadgeClass(filtro)">
+        {{ filtro.valor | titlecase }}
+        <button (click)="clearFiltro(filtro)">×</button>
+      </span>
+
+    </div>
+
+
   </section>
-
-
-
-
 
 
   <section class="news-list">
     <!-- Exemplo de item de notícia -->
     <article class="news-item">
       <div class="news-item__thumb">
-        <img src="caminho/para-imagem.jpg" alt="Imagem da notícia" />
+        <img
+          src="https://painel.siganet.net.br/upload/0000000002/cms/images/thumbs/570x471_ccf24941832dc3984f4025bf970b63cd.jpg"
+          alt="Imagem da notícia" />
       </div>
       <div class="news-item__info">
         <div class="news-item__meta">
           <span class="news-item__date">04 de setembro de 2025</span>
-          <span class="news-item__category">Avisos</span>
+          <span class="news-item__category avisos">Avisos</span>
         </div>
-        <h2 class="news-item__title">SAAE Caxias marca presença no 53° Congresso Nacional de Saneamento</h2>
+        <h2 class="news-item__title">SAAE São João do Soter marca presença no 53° Congresso Nacional de Saneamento</h2>
         <p class="news-item__excerpt">Texto de exemplo com um resumo da notícia para apresentar ao leitor …</p>
-        <a href="/noticia/slug" class="news-item__link">Ler a matéria completa →</a>
+        <a href="#" class="news-item__link">Ler a matéria completa →</a>
       </div>
     </article>
+    <article class="news-item">
+      <div class="news-item__thumb">
+        <img
+          src="https://painel.siganet.net.br/upload/0000000002/cms/images/thumbs/570x471_ccf24941832dc3984f4025bf970b63cd.jpg"
+          alt="Imagem da notícia" />
+      </div>
+      <div class="news-item__info">
+        <div class="news-item__meta">
+          <span class="news-item__date">04 de setembro de 2025</span>
+          <span class="news-item__category abastecimento">Abastecimento</span>
+        </div>
+        <h2 class="news-item__title">SAAE São João do Soter marca presença no 53° Congresso Nacional de Saneamento</h2>
+        <p class="news-item__excerpt">Texto de exemplo com um resumo da notícia para apresentar ao leitor …</p>
+        <a href="#" class="news-item__link">Ler a matéria completa →</a>
+      </div>
+    </article>
+
+
 
     <!-- repetir outros artigos conforme os dados disponíveis -->
   </section>
@@ -159,7 +192,7 @@
       </div>
       <div class="stats-box">
         <strong>Categorias Ativas</strong>
-        <span>4</span>
+        <span>3</span>
       </div>
       <div class="stats-box">
         <strong>Atualizações/Mês</strong>
