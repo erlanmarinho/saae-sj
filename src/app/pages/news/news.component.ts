@@ -1,9 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { CustomSelectComponent } from '../../componts/custom-select/custom-select.component';
 import { FooterComponent } from '../../componts/footer/footer.component';
 import { HeaderComponent } from '../../componts/header/header.component';
+
+
+interface Noticia {
+  id: number;
+  titulo: string;
+  resumo: string;
+  data: string;
+  categoria: string;
+  imagem: string;
+  link: string;
+}
 
 @Component({
   selector: 'app-news',
@@ -13,7 +25,8 @@ import { HeaderComponent } from '../../componts/header/header.component';
     FooterComponent,
     CustomSelectComponent,
     FormsModule,
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   templateUrl: './news.component.html',
   styleUrl: './news.component.scss'
@@ -24,10 +37,63 @@ export class NewsComponent {
   itemWidth = 0;
   modoAvancado = false;
 
+  noticias: Noticia[] = [
+    {
+      id: 1,
+      titulo: 'SAAE São João do Soter marca presença no 53° Congresso Nacional de Saneamento',
+      resumo: 'Texto de exemplo com um resumo da notícia para apresentar ao leitor …',
+      data: '04 de setembro de 2025',
+      categoria: 'Avisos',
+      imagem: 'https://painel.siganet.net.br/upload/0000000002/cms/images/thumbs/570x471_ccf24941832dc3984f4025bf970b63cd.jpg',
+      link: '#'
+    },
+    {
+      id: 1,
+      titulo: 'SAAE São João do Soter marca presença no 53° Congresso Nacional de Saneamento',
+      resumo: 'Texto de exemplo com um resumo da notícia para apresentar ao leitor …',
+      data: '04 de setembro de 2025',
+      categoria: 'abastecimento',
+      imagem: 'https://painel.siganet.net.br/upload/0000000002/cms/images/thumbs/570x471_ccf24941832dc3984f4025bf970b63cd.jpg',
+      link: '#'
+    },
+    {
+      id: 1,
+      titulo: 'SAAE São João do Soter marca presença no 53° Congresso Nacional de Saneamento',
+      resumo: 'Texto de exemplo com um resumo da notícia para apresentar ao leitor …',
+      data: '04 de setembro de 2025',
+      categoria: 'Avisos',
+      imagem: 'https://painel.siganet.net.br/upload/0000000002/cms/images/thumbs/570x471_ccf24941832dc3984f4025bf970b63cd.jpg',
+      link: '#'
+    },
+    {
+      id: 1,
+      titulo: 'SAAE São João do Soter marca presença no 53° Congresso Nacional de Saneamento',
+      resumo: 'Texto de exemplo com um resumo da notícia para apresentar ao leitor …',
+      data: '04 de setembro de 2025',
+      categoria: 'Avisos',
+      imagem: 'https://painel.siganet.net.br/upload/0000000002/cms/images/thumbs/570x471_ccf24941832dc3984f4025bf970b63cd.jpg',
+      link: '#'
+    },
+    {
+      id: 1,
+      titulo: 'SAAE São João do Soter marca presença no 53° Congresso Nacional de Saneamento',
+      resumo: 'Texto de exemplo com um resumo da notícia para apresentar ao leitor …',
+      data: '04 de setembro de 2025',
+      categoria: 'Avisos',
+      imagem: 'https://painel.siganet.net.br/upload/0000000002/cms/images/thumbs/570x471_ccf24941832dc3984f4025bf970b63cd.jpg',
+      link: '#'
+    },
+    // ...adicione as demais notícias aqui
+  ];
+
+
   categoriaSelecionada: string = '';
   ordenacaoSelecionada: string = '';
 
   filtrosAtivos: { tipo: string; label: string; valor: string }[] = [];
+
+  noticia = { id: 1 };
+
 
   getBadgeClass(filtro: { tipo: string; valor: string }): string {
     if (!filtro) return 'badge-default';
@@ -43,6 +109,23 @@ export class NewsComponent {
     }
     return 'badge-default';
   }
+
+  paginaAtual = 1;
+  itensPorPagina = 4;
+
+  get noticiasPaginadas(): Noticia[] {
+    const start = (this.paginaAtual - 1) * this.itensPorPagina;
+    return this.noticias.slice(start, start + this.itensPorPagina);
+  }
+
+  totalPaginas(): number {
+    return Math.ceil(this.noticias.length / this.itensPorPagina);
+  }
+
+  mudarPagina(p: number) {
+    this.paginaAtual = p;
+  }
+
 
   onCategoriaChange(value: string) {
     this.removeFiltro('categoria');

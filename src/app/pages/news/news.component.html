@@ -34,7 +34,10 @@
                 <p>56</p>
               </div>
             </div>
-            <a href="#" class="read-more">Leia Mais</a>
+
+
+            <a [routerLink]="['/news', noticia.id]" class="read-more">Ler mais</a>
+
           </div>
         </div>
         <div class="carousel-item">
@@ -145,44 +148,33 @@
 
 
   <section class="news-list">
-    <!-- Exemplo de item de notícia -->
-    <article class="news-item">
+    <article class="news-item" *ngFor="let n of noticiasPaginadas">
       <div class="news-item__thumb">
-        <img
-          src="https://painel.siganet.net.br/upload/0000000002/cms/images/thumbs/570x471_ccf24941832dc3984f4025bf970b63cd.jpg"
-          alt="Imagem da notícia" />
+        <img [src]="n.imagem" [alt]="n.titulo" />
       </div>
+
       <div class="news-item__info">
         <div class="news-item__meta">
-          <span class="news-item__date">04 de setembro de 2025</span>
-          <span class="news-item__category avisos">Avisos</span>
+          <span class="news-item__date">{{ n.data }}</span>
+          <span class="news-item__category" [ngClass]="n.categoria.toLowerCase()">
+            {{ n.categoria }}
+          </span>
         </div>
-        <h2 class="news-item__title">SAAE São João do Soter marca presença no 53° Congresso Nacional de Saneamento</h2>
-        <p class="news-item__excerpt">Texto de exemplo com um resumo da notícia para apresentar ao leitor …</p>
-        <a href="#" class="news-item__link">Ler a matéria completa →</a>
+        <h2 class="news-item__title">{{ n.titulo }}</h2>
+        <p class="news-item__excerpt">{{ n.resumo }}</p>
+        <a [href]="n.link" class="news-item__link">Ler a matéria completa →</a>
       </div>
     </article>
-    <article class="news-item">
-      <div class="news-item__thumb">
-        <img
-          src="https://painel.siganet.net.br/upload/0000000002/cms/images/thumbs/570x471_ccf24941832dc3984f4025bf970b63cd.jpg"
-          alt="Imagem da notícia" />
-      </div>
-      <div class="news-item__info">
-        <div class="news-item__meta">
-          <span class="news-item__date">04 de setembro de 2025</span>
-          <span class="news-item__category abastecimento">Abastecimento</span>
-        </div>
-        <h2 class="news-item__title">SAAE São João do Soter marca presença no 53° Congresso Nacional de Saneamento</h2>
-        <p class="news-item__excerpt">Texto de exemplo com um resumo da notícia para apresentar ao leitor …</p>
-        <a href="#" class="news-item__link">Ler a matéria completa →</a>
-      </div>
-    </article>
-
-
-
-    <!-- repetir outros artigos conforme os dados disponíveis -->
   </section>
+
+  <!-- Paginação -->
+  <nav class="pagination">
+    <button *ngFor="let p of [].constructor(totalPaginas()); let i = index" [class.active]="paginaAtual === i + 1"
+      (click)="mudarPagina(i + 1)">
+      {{ i + 1 }}
+    </button>
+  </nav>
+
 
   <section class="news-stats">
     <div class="stats-container">
