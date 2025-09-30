@@ -1,82 +1,106 @@
 <main>
+  <!-- Cabeçalho do site -->
   <app-header></app-header>
-  <!-- SEÇÃO PRICIPAL -->
+
+  <!-- ===============================
+       SEÇÃO PRINCIPAL / HERO
+       Apresenta a missão e destaque do SAAE
+       =============================== -->
   <section class="main-section">
+    <!-- Destaque dos anos de fundação -->
     <div class="years-foundation">
       <p>63 anos servindo São João do Soter</p>
     </div>
+
+    <!-- Título principal -->
     <div>
       <h1 class="title">
         Serviço Autônomo de Água e Esgoto de São João do Soter - SAAE
       </h1>
     </div>
-    <p>Promovendo mais saúde e qualidade de vida pra população soterense.</p>
 
+    <!-- Subtítulo / slogan -->
+    <p>Promovendo mais saúde e qualidade de vida pra população soterense.</p>
   </section>
-  <!-- SEÇÃO AGÊNCIA VIRTUAL -->
+
+  <!-- ===============================
+       SEÇÃO AGÊNCIA VIRTUAL
+       Oferece acesso rápido aos serviços online
+       =============================== -->
   <section class="virtual-agency-section">
     <div class="virtual-agency">
       <h2>Agência Virtual</h2>
       <p>Acesse nossos serviços online de forma rápida e segura</p>
     </div>
+
+    <!-- Lista de serviços disponíveis -->
     <div class="services">
+      <!-- Serviço 1: Segunda Via -->
       <div class="service-item">
         <a href="#">
           <span class="material-icons icon">request_page</span>
           <h3>Segunda Via</h3>
           <p>Emita a segunda via da sua conta</p>
         </a>
-
       </div>
 
+      <!-- Serviço 2: Nova Ligação -->
       <div class="service-item">
         <a href="#">
           <span class="material-icons">water_damage</span>
           <h3>Nova Ligação</h3>
           <p>Solicite uma nova ligação de água</p>
         </a>
-
       </div>
 
+      <!-- Serviço 3: Vazamentos -->
       <div class="service-item">
         <a href="#">
           <span class="material-icons">clean_hands</span>
           <h3>Vazamentos</h3>
           <p>Informe vazamento na sua rua</p>
         </a>
-
       </div>
 
+      <!-- Serviço 4: Religação -->
       <div class="service-item">
         <a href="#">
           <span class="material-icons">build</span>
           <h3>Religação</h3>
           <p>Solicite a religação do fornecimento</p>
         </a>
-
       </div>
     </div>
   </section>
 
-  <!--SEÇÃO NOTÍCIAS -->
+  <!-- ===============================
+       SEÇÃO NOTÍCIAS / CARROSSEL
+       Mostra notícias recentes e atualizações
+       =============================== -->
   <section class="news-section">
+    <!-- Cabeçalho da seção de notícias -->
     <div class="news-header">
       <h2>Notícias Recentes</h2>
       <a href="#" class="see-all">Ver Todas</a>
     </div>
 
+    <!-- Carrossel de notícias -->
     <div class="carousel">
       <div class="carousel-wrapper" #carouselWrapper>
+
+        <!-- Notícia 1 -->
         <div class="carousel-item">
           <div class="news-card">
             <img
               src="https://painel.siganet.net.br/upload/0000000002/cms/images/thumbs/570x471_ccf24941832dc3984f4025bf970b63cd.jpg"
               alt="Notícia 1">
-            <h3>Manutenção </h3>
+            <h3>Manutenção</h3>
             <p>Haverá uma manutenção programada no sistema de abastecimento na próxima segunda-feira.</p>
             <a href="#" class="read-more">Leia Mais</a>
           </div>
         </div>
+
+        <!-- Notícia 2 -->
         <div class="carousel-item">
           <div class="news-card">
             <img
@@ -87,6 +111,8 @@
             <a href="#" class="read-more">Leia Mais</a>
           </div>
         </div>
+
+        <!-- Notícia 3 -->
         <div class="carousel-item">
           <div class="news-card">
             <img
@@ -99,13 +125,12 @@
         </div>
       </div>
 
+      <!-- Controles do carrossel -->
       <button class="carousel-control prev" (click)="prevSlide()">&#10094;</button>
       <button class="carousel-control next" (click)="nextSlide()">&#10095;</button>
     </div>
   </section>
 
-
-
+  <!-- Rodapé do site -->
   <app-footer></app-footer>
-
 </main>

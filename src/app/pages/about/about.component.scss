@@ -1,23 +1,26 @@
 @import "../../../color-variables.scss";
 
 main {
-  min-height: 100vh;
+  min-height: 100vh; // garante altura mínima da página
 
+  /* =========================================================
+     Seção de topo: header com título e descrição
+     ========================================================= */
   .header-section {
     text-align: center;
     background: -webkit-linear-gradient(250deg, $primary-blue, $light-green);
-    margin-top: 6rem;
+    margin-top: 6rem; // espaço abaixo do header fixo
     padding: 2rem 1rem;
 
     .title {
       background: -webkit-linear-gradient(250deg, $light-green, $gray-100);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-text-fill-color: transparent; // efeito degradê no texto
     }
 
     h2 {
       font-weight: bold;
-      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem); // responsivo
     }
 
     p {
@@ -26,6 +29,7 @@ main {
       line-height: 1.7;
     }
 
+    // Responsividade para mobile
     @media (max-width: 768px) {
       width: 100%;
       margin-top: 3rem;
@@ -33,6 +37,9 @@ main {
     }
   }
 
+  /* =========================================================
+     Seção "Sobre" com texto e imagem
+     ========================================================= */
   .about-section {
     display: flex;
     flex-direction: column;
@@ -42,9 +49,9 @@ main {
     gap: 2rem;
 
     .about-content {
-      width: 100%; // ocupa toda largura disponível
-      max-width: 800px; // limite máximo em telas grandes
-      text-align: center; // centraliza o texto por padrão
+      width: 100%;
+      max-width: 800px; // limite em telas grandes
+      text-align: center;
       background: rgba($blue-300, 0.2);
       border-radius: 8px;
       padding: 2rem 1.5rem;
@@ -67,17 +74,17 @@ main {
 
         span {
           font-weight: bold;
-          color: $primary-blue;
+          color: $primary-blue; // destaque em partes do texto
         }
       }
 
       @media (max-width: 768px) {
-        padding: 1.5rem 1rem; // reduz padding
-        max-width: 95%; // quase toda a largura disponível
+        padding: 1.5rem 1rem;
+        max-width: 95%;
       }
 
       @media (max-width: 480px) {
-        padding: 1rem 0.8rem; // padding ainda menor
+        padding: 1rem 0.8rem;
         font-size: 0.95rem;
       }
     }
@@ -96,7 +103,9 @@ main {
     }
   }
 
-
+  /* =========================================================
+     Seção de Infraestrutura com cards
+     ========================================================= */
   .infrastructure-section {
     display: flex;
     flex-direction: column;
@@ -155,6 +164,7 @@ main {
           }
         }
 
+        // Diferenciação de cores por card
         .bg-blue {
           background: $medium-blue;
         }
@@ -192,10 +202,8 @@ main {
       }
     }
 
+    // Responsividade para tablets
     @media (max-width: 768px) {
-
-
-
       h2 {
         font-size: 24px;
         text-align: center;
@@ -212,6 +220,7 @@ main {
       }
     }
 
+    // Responsividade para celulares
     @media (max-width: 480px) {
       .card {
         h3 {
@@ -225,6 +234,9 @@ main {
     }
   }
 
+  /* =========================================================
+     Seção de diferenciais / compromisso
+     ========================================================= */
   .differential-section {
     background: -webkit-linear-gradient(91deg, $primary-blue, $light-blue);
     padding: 20px;
@@ -274,6 +286,7 @@ main {
       }
     }
 
+    // Responsividade para tablets
     @media (max-width: 768px) {
       h3 {
         font-size: 24px;
@@ -292,6 +305,7 @@ main {
       }
     }
 
+    // Responsividade para celulares
     @media (max-width: 480px) {
       .cards-section .card p {
         font-size: 12px;
@@ -299,14 +313,16 @@ main {
     }
   }
 
-  /* ===== Ajuste final para telas muito pequenas ===== */
+  /* =========================================================
+     Ajustes finais para telas muito pequenas
+     ========================================================= */
   @media (max-width: 480px) {
     .about-section .about-content h2 {
-      font-size: 1.1rem; // ~17–18px
+      font-size: 1.1rem;
     }
 
     .about-section .about-content p {
-      font-size: 0.9rem; // ~14–15px
+      font-size: 0.9rem;
       line-height: 1.5;
     }
   }

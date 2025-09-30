@@ -1,34 +1,44 @@
+<!-- =========================================================================
+  Componente Footer
+  - Exibe informações institucionais, contatos, links rápidos e redes sociais
+  - Estrutura dividida em blocos .content-items para facilitar layout responsivo
+=============================================================================-->
+
 <div class="footer">
+
+  <!-- ================== SOBRE O SAAE ================== -->
   <div class="content-items">
     <div class="header-title">
       <span class="material-icons icon">water_drop</span>
       <h2>Sobre o SAAE</h2>
-
     </div>
-    <p>Há 63 anos cuidando do saneamento e abastecimento de água de São João do Soter, garantindo qualidade de vida e
-      desenvolvimento sustentável para nossa comunidade.</p>
+    <p>
+      Há 63 anos cuidando do saneamento e abastecimento de água de São João do Soter,
+      garantindo qualidade de vida e desenvolvimento sustentável para nossa comunidade.
+    </p>
+
+    <!-- Dados de destaque (famílias atendidas e tipo de serviço) -->
     <div class="data-footer-family">
       <div class="data-family">
         <span class="material-symbols-outlined thin-icon thin-span">family_group</span>
-        <span class="thin-span"> 50k+ famílias</span>
+        <span class="thin-span">50k+ famílias</span>
       </div>
       <div class="data-family">
-        <span class="material-symbols-outlined thin-icon thin-span">
-          water_medium
-        </span>
-        <span class="thin-span"> Água Tratada</span>
+        <span class="material-symbols-outlined thin-icon thin-span">water_medium</span>
+        <span class="thin-span">Água Tratada</span>
       </div>
-
     </div>
   </div>
+
+  <!-- ================== CONTATO ================== -->
   <div class="content-items">
     <div class="header-title">
       <span class="material-icons icon">contact_mail</span>
       <h2>Contato</h2>
     </div>
 
-    <!--LOCALIZAÇÃO-->
     <div class="wrapp">
+      <!-- Endereço -->
       <a class="link-item" href="#">
         <div class="data-container">
           <div class="icon-wrap">
@@ -36,12 +46,12 @@
           </div>
           <div class="text-wrap">
             <p class="thin-blue">Rua Grande, s/n, Centro</p>
-            <span class="thin-blue thin-span ">São João do Soter-MA</span>
+            <span class="thin-blue thin-span">São João do Soter-MA</span>
           </div>
         </div>
       </a>
 
-      <!--WHATSAPP-->
+      <!-- WhatsApp oficial -->
       <a class="link-item" href="#">
         <div class="data-container">
           <div class="icon-wrap">
@@ -54,7 +64,7 @@
         </div>
       </a>
 
-      <!--EMAIL-->
+      <!-- E-mail oficial -->
       <a class="link-item" href="#">
         <div class="data-container">
           <div class="icon-wrap">
@@ -62,29 +72,25 @@
           </div>
           <div class="text-wrap">
             <p class="thin-orange">{{ 'contato@gmail.com' }}</p>
-            <span class="thin-orange thin-span ">E-mail oficial</span>
+            <span class="thin-orange thin-span">E-mail oficial</span>
           </div>
         </div>
       </a>
 
-      <!--ABERTO-->
-
+      <!-- Horário de atendimento -->
       <div class="data-container">
         <div class="icon-wrap">
           <span class="material-symbols-outlined thin-icon clock">share_eta</span>
         </div>
         <div class="text-wrap">
           <p class="thin-orange">Segunda a Sexta</p>
-          <span class="thin-orange thin-span ">07h às 17h</span>
+          <span class="thin-orange thin-span">07h às 17h</span>
         </div>
       </div>
-
     </div>
-
-
   </div>
 
-  <!--LINKS RAPIDOS-->
+  <!-- ================== LINKS RÁPIDOS ================== -->
   <div class="content-items links-rapidos">
     <div class="header-title">
       <span class="material-icons icon">share</span>
@@ -92,6 +98,7 @@
     </div>
 
     <div class="wrapp-links">
+      <!-- Links de navegação interna -->
       <a class="link-item" href="#">
         <span class="material-symbols-outlined thin-icon">arrow_forward_ios</span>
         Nova Ligação
@@ -114,32 +121,32 @@
       </a>
     </div>
   </div>
-  <!--END LINKS RAPIDOS-->
 
-  <!--REDES SOCIAIS-->
+  <!-- ================== REDES SOCIAIS ================== -->
   <div class="content-items redes-sociais">
     <div class="header-title">
       <span class="material-symbols-outlined icon">thumbs_up_double</span>
       <h2>Redes Sociais</h2>
     </div>
+
+    <!-- Ícones das redes sociais -->
     <div class="social-grid">
       <a class="link-item facebook" href="#"><i class="fab fa-facebook-f"></i></a>
       <a class="link-item instagram" href="#"><i class="fab fa-instagram"></i></a>
       <a class="link-item youtube" href="#"><i class="fab fa-youtube"></i></a>
       <a class="link-item twitter" href="#"><i class="fab fa-twitter"></i></a>
     </div>
+
+    <!-- Botão de acesso à segunda via -->
     <a class="segunda-via" href="#">
       <span class="material-symbols-outlined icon">water_drop</span>
       Segunda Via
       <span class="material-symbols-outlined icon">swipe_up</span>
     </a>
   </div>
-
-  <!--END REDES SOCIAIS-->
-
-
-
 </div>
+
+<!-- ================== RODAPÉ LEGAL ================== -->
 <div class="footer-wrapp">
   <div class="footer-direitos-reservado">
     <p>© 2025 SAAE Caxias. Todos os direitos reservados.</p>

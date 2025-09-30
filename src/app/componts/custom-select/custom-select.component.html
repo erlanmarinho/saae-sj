@@ -1,10 +1,28 @@
+<!--
+  Componente de Select Customizado
+  - Exibe um rótulo selecionado e uma lista suspensa de opções.
+  - A interação é controlada pelo componente TypeScript correspondente,
+    que fornece as variáveis e métodos abaixo:
+      • selectedLabel : string  → rótulo exibido na área selecionada
+      • isOpen        : boolean → indica se o dropdown está aberto
+      • options       : Array<{label:string,value:any}> → lista de opções
+      • selectedValue : any     → valor atualmente selecionado
+      • toggleDropdown()        → abre/fecha o dropdown
+      • selectOption(option)    → seleciona a opção clicada
+-->
+
 <div class="custom-select">
+  <!-- Área que mostra o item selecionado.
+       Ao clicar, chama toggleDropdown() para abrir/fechar a lista -->
   <div class="selected" (click)="toggleDropdown()">
     {{ selectedLabel }}
-    <span class="arrow">&#9662;</span>
+    <span class="arrow">&#9662;</span> <!-- Ícone de seta para indicar dropdown -->
   </div>
 
+  <!-- Lista de opções, exibida apenas quando isOpen for verdadeiro -->
   <div class="options" *ngIf="isOpen">
+    <!-- Gera cada opção dinamicamente a partir de 'options'.
+         Adiciona a classe 'selected' quando o valor da opção for o selecionado -->
     <div class="option" *ngFor="let option of options" (click)="selectOption(option)"
       [class.selected]="option.value === selectedValue">
       {{ option.label }}

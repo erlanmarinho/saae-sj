@@ -1,5 +1,8 @@
 <main>
+  <!-- Cabeçalho -->
   <app-header></app-header>
+
+  <!-- Seção do cabeçalho da página de serviços -->
   <section class="header-section">
     <div class="title">
       <h2>Nosso Serviços</h2>
@@ -7,71 +10,83 @@
     </div>
   </section>
 
+  <!-- Seção de Serviços Digitais -->
   <section class="digital-services">
     <div class="digital-services-title">
       <h2>Serviços Digitais</h2>
       <p>Acesse nossos serviços online de forma rápida e segura</p>
     </div>
-    <div>
+    <div class="services-wrapper">
+      <!-- Serviço: Segunda Via -->
       <div class="service-item green-card">
         <a href="#">
-          <span class="material-icons icon-green ">request_page</span>
+          <span class="material-icons icon-green">request_page</span>
           <h3 class="green-card-h3">Segunda Via</h3>
           <p class="green-card-p">Emita a segunda via da sua conta</p>
         </a>
       </div>
 
-      <div class="service-item blue-card ">
+      <!-- Serviço: Nova Ligação -->
+      <div class="service-item blue-card">
         <a href="#">
-          <span class="material-icons  icon-blue">water_damage</span>
+          <span class="material-icons icon-blue">water_damage</span>
           <h3 class="blue-card-h3">Nova Ligação</h3>
           <p class="blue-card-p">Solicite uma nova ligação de água</p>
         </a>
       </div>
 
-      <div class="service-item icons orange-card">
+      <!-- Serviço: Religação -->
+      <div class="service-item orange-card">
         <a href="#">
-          <span class="material-icons icon-orange ">build</span>
+          <span class="material-icons icon-orange">build</span>
           <h3 class="orange-card-h3">Religação</h3>
           <p class="orange-card-p">Solicite a religação do fornecimento</p>
         </a>
       </div>
 
-      <div class="service-item red-card ">
+      <!-- Serviço: Vazamentos -->
+      <div class="service-item red-card">
         <a href="#">
-          <span class="material-icons icon-red ">clean_hands</span>
-          <h3 class="red-card-h3 ">Vazamentos</h3>
+          <span class="material-icons icon-red">clean_hands</span>
+          <h3 class="red-card-h3">Vazamentos</h3>
           <p class="red-card-p">Informe vazamento na sua rua</p>
         </a>
       </div>
     </div>
   </section>
+
+  <!-- Seção de Informações Importantes -->
   <section class="info-section">
     <div class="info-title">
       <h2>Informações Importantes</h2>
     </div>
     <div class="info-cards">
+      <!-- Card: Documentos Necessários -->
       <div class="info-card">
         <h3>Documentos Necessários</h3>
         <ul>
-          <li><span class="material-symbols-outlined thin-icon">check</span>RG e CPF do titular</li>
-          <li><span class="material-symbols-outlined thin-icon">check</span>Comprovante de residência</li>
-          <li><span class="material-symbols-outlined thin-icon">check</span>Documento do imóvel <span>(escritura,
+          <li><span class="material-symbols-outlined thin-icon">check</span> RG e CPF do titular</li>
+          <li><span class="material-symbols-outlined thin-icon">check</span> Comprovante de residência</li>
+          <li><span class="material-symbols-outlined thin-icon">check</span> Documento do imóvel <span>(escritura,
               contrato ou IPTU)</span></li>
-          <li><span class="material-symbols-outlined thin-icon">check</span>Procuração <span>(se necessário)</span></li>
+          <li><span class="material-symbols-outlined thin-icon">check</span> Procuração <span>(se necessário)</span>
+          </li>
         </ul>
       </div>
+
+      <!-- Card: Prazos de Atendimento -->
       <div class="info-card">
         <h3>Prazos de Atendimento</h3>
         <ul>
-          <li><span class="material-symbols-outlined thin-icon">check</span>Ligação nova: até 7 dias úteis
-          </li>
-          <li><span class="material-symbols-outlined thin-icon">check</span>Religação: até 24 horas</li>
-          <li><span class="material-symbols-outlined thin-icon">check</span>Vazamentos: até 24 horas</li>
-          <li><span class="material-symbols-outlined thin-icon">check</span>Vistorias: até 3 dias úteis</li>
+          <li><span class="material-symbols-outlined thin-icon">check</span> Ligação nova: até 7 dias úteis</li>
+          <li><span class="material-symbols-outlined thin-icon">check</span> Religação: até 24 horas</li>
+          <li><span class="material-symbols-outlined thin-icon">check</span> Vazamentos: até 24 horas</li>
+          <li><span class="material-symbols-outlined thin-icon">check</span> Vistorias: até 3 dias úteis</li>
         </ul>
       </div>
     </div>
   </section>
+
+  <!-- Rodapé -->
   <app-footer></app-footer>
 </main>

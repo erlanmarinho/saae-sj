@@ -1,5 +1,8 @@
 <main class="news-page">
+  <!-- Cabeçalho do site -->
   <app-header></app-header>
+
+  <!-- Seção de destaque da página de notícias -->
   <section class="news-hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -8,13 +11,15 @@
     </div>
   </section>
 
+  <!-- Seção das últimas atualizações / carrossel de notícias -->
   <section class="news-end">
     <div class="new-header">
       <h2>Últimas Atualizações</h2>
       <p>Fique informado sobre as principais novidades e comunicados do SAAE</p>
     </div>
-    <div class="carousel">
 
+    <div class="carousel">
+      <!-- Wrapper do carrossel de notícias -->
       <div class="carousel-wrapper" #carouselWrapper>
         <div class="carousel-item">
           <div class="news-card">
@@ -23,23 +28,24 @@
               alt="Notícia 1">
             <h3>Manutenção </h3>
             <p>Haverá uma manutenção programada no sistema de abastecimento na próxima segunda-feira.</p>
+
+            <!-- Informações da notícia: data e visualizações -->
             <div class="data">
               <div class="calendar">
                 <span class="material-symbols-outlined thin-icon email">calendar_today</span>
                 <p>25 de setembro</p>
               </div>
-
               <div class="visibility">
                 <span class="material-symbols-outlined thin-icon email">visibility</span>
                 <p>56</p>
               </div>
             </div>
 
-
+            <!-- Link para ler a notícia completa -->
             <a [routerLink]="['/news', noticia.id]" class="read-more">Ler mais</a>
-
           </div>
         </div>
+
         <div class="carousel-item">
           <div class="news-card">
             <img
@@ -47,31 +53,30 @@
               alt="Notícia 2">
             <h3>Campanha de Conscientização</h3>
             <p>Participe da nossa campanha de conscientização sobre o uso racional da água.</p>
+
+            <!-- Informações da notícia: data e visualizações -->
             <div class="data">
               <div class="calendar">
-
                 <span class="material-symbols-outlined thin-icon email">calendar_today</span>
-                <p>
-                  25 de setembro
-                </p>
+                <p>25 de setembro</p>
               </div>
-
               <div class="visibility">
                 <span class="material-symbols-outlined thin-icon email">visibility</span>
                 <p>56</p>
               </div>
             </div>
+
             <a href="#" class="read-more">Leia Mais</a>
           </div>
         </div>
-
       </div>
 
+      <!-- Controle do carrossel -->
       <button class="carousel-control prev">Ver Todas as Notícias</button>
-
     </div>
   </section>
 
+  <!-- Seção de filtros de notícias -->
   <section class="filter-section">
     <div class="filter-header">
       <div class="icon-filter">
@@ -81,9 +86,12 @@
       <p>2 resultados encontrados</p>
     </div>
 
+    <!-- Controles de filtro -->
     <div class="filter-controls">
+      <!-- Campo de busca por título ou conteúdo -->
       <input class="text" type="text" placeholder="Buscar por título ou conteúdo..." />
 
+      <!-- Dropdown de categorias -->
       <app-custom-select class="custo-select" [options]="[
         { value: '', label: 'Todas as categorias' },
         { value: 'avisos', label: 'Avisos' },
@@ -91,25 +99,23 @@
         { value: 'institucional', label: 'Institucional' }
       ]" (selectedValueChange)="onCategoriaChange($event)"></app-custom-select>
 
+      <!-- Dropdown de ordenação -->
       <app-custom-select [options]="[
         { value: 'recentes', label: 'Mais recentes' },
         { value: 'mais-vistas', label: 'Mais visitadas' },
         { value: 'relevancia', label: 'Relevância' }
       ]" (selectedValueChange)="onOrdenacaoChange($event)"></app-custom-select>
 
-
-
-
+      <!-- Botão para mostrar campos avançados -->
       <button class="advanced-btn" (click)="modoAvancado = !modoAvancado">
         <span class="material-symbols-outlined">tune</span>
         Avançado
       </button>
     </div>
 
-    <!-- Campos avançados -->
+    <!-- Campos avançados, exibidos quando ativado -->
     <div class="filter-controls advanced-fields" *ngIf="modoAvancado">
-
-      <!-- Nova seção de Períodos -->
+      <!-- Botões de período -->
       <div class="period-buttons">
         <span class="period active">Todos</span>
         <span class="period">Última semana</span>
@@ -117,6 +123,7 @@
         <span class="period">Último ano</span>
       </div>
 
+      <!-- Dropdowns adicionais para filtros avançados -->
       <app-custom-select [options]="[
         { value: '', label: 'Todos os tipo' },
         { value: 'Urgentes', label: 'Urgentes' },
@@ -125,34 +132,26 @@
       ]" (selectedValueChange)="onCategoriaChange($event)"></app-custom-select>
 
       <app-custom-select [options]="[
-        
         { value: 'Mais recentes', label: 'Mais recentes' },
         { value: 'Mais antigos', label: 'Mais antigos' }
       ]" (selectedValueChange)="onCategoriaChange($event)"></app-custom-select>
-
-
-
-
     </div>
-    <!-- Badge da categoria -->
+
+    <!-- Badges de filtros ativos -->
     <div class="active-filters">
       <span *ngFor="let filtro of filtrosAtivos" class="filter-badge" [ngClass]="getBadgeClass(filtro)">
         {{ filtro.valor | titlecase }}
         <button (click)="clearFiltro(filtro)">×</button>
       </span>
-
     </div>
-
-
   </section>
 
-
+  <!-- Lista de notícias -->
   <section class="news-list">
     <article class="news-item" *ngFor="let n of noticiasPaginadas">
       <div class="news-item__thumb">
         <img [src]="n.imagem" [alt]="n.titulo" />
       </div>
-
       <div class="news-item__info">
         <div class="news-item__meta">
           <span class="news-item__date">{{ n.data }}</span>
@@ -175,7 +174,7 @@
     </button>
   </nav>
 
-
+  <!-- Estatísticas de notícias -->
   <section class="news-stats">
     <div class="stats-container">
       <div class="stats-box">
@@ -193,7 +192,6 @@
     </div>
   </section>
 
+  <!-- Rodapé -->
   <app-footer></app-footer>
-
-
 </main>

@@ -1,52 +1,66 @@
+// -----------------------------------------------------------------------------
+// Importa variáveis de cores globais usadas neste componente
+// -----------------------------------------------------------------------------
 @import "../../../color-variables.scss";
 
+// -----------------------------------------------------------------------------
+// Componente: custom-select
+// Contêiner principal do select customizado
+// -----------------------------------------------------------------------------
 .custom-select {
-  position: relative;
-  width: 320px;
-  /* Largura fixa */
-  // ocupa todo o espaço do container
-  font-family: Arial;
+  position: relative; // Permite posicionar a lista de opções de forma absoluta
+  width: 320px; // Largura fixa do componente
+  font-family: Arial; // Fonte do texto interno
 
-
+  // ---------------------------------------------------------------------------
+  // Área selecionada (campo que mostra o valor escolhido)
+  // ---------------------------------------------------------------------------
   .selected {
     width: auto;
     padding: 10px 15px;
     border-radius: 8px;
     border: 1px solid $gray-300;
     background: $white;
-    cursor: pointer;
+    cursor: pointer; // Cursor de mão ao passar o mouse
     display: flex;
     justify-content: space-between;
     align-items: center;
 
+    // Ícone de seta indicando dropdown
     .arrow {
       font-size: 0.8rem;
       margin-left: 0.5rem;
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // Lista de opções (dropdown)
+  // ---------------------------------------------------------------------------
   .options {
-    position: absolute;
-    top: calc(100% + 5px);
+    position: absolute; // Fica sobre o fluxo normal do documento
+    top: calc(100% + 5px); // Aparece logo abaixo do campo selecionado
     left: 0;
     right: 0;
     border: 1px solid $gray-300;
     border-radius: 12px;
     background: $white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    max-height: 200px;
-    overflow-y: auto;
+    z-index: 10; // Garante que fique acima de outros elementos
+    max-height: 200px; // Limita a altura para rolagem
+    overflow-y: auto; // Adiciona scroll quando necessário
 
+    // Cada opção individual
     .option {
       padding: 10px 15px;
       cursor: pointer;
-      transition: background 0.2s;
+      transition: background 0.2s; // Suaviza o hover
 
+      // Efeito ao passar o mouse
       &:hover {
         background: $blue-100;
       }
 
+      // Estado quando a opção está selecionada
       &.selected {
         background: $primary-blue;
         color: $white;

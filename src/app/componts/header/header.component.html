@@ -1,21 +1,33 @@
 <header>
+  <!-- ================================
+       LOGO
+       ================================ -->
   <div class="logo">
     <img src="assets/logo.png" alt="Logo SAAE" />
   </div>
 
+  <!-- ================================
+       NAVEGAÇÃO PRINCIPAL
+       - A classe 'active' é controlada por menuActive
+       ================================ -->
   <nav [class.active]="menuActive">
     <ul>
+      <!-- Item de menu: Início -->
       <li>
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
           Início
         </a>
       </li>
 
+      <!-- Item de menu com submenu: Serviços -->
       <li [class.open]="submenuOpen" (click)="submenuOpen = !submenuOpen">
         <a class="arrow_drop_down services-dropdown" routerLink="/services" routerLinkActive="active">
           Serviços
+          <!-- Ícone de seta para indicar dropdown -->
           <span class="material-icons">arrow_drop_down</span>
         </a>
+
+        <!-- Submenu dropdown -->
         <ul class="dropdown">
           <div class="dropdown-content">
             <li><a routerLink="/services/second-copy" routerLinkActive="active">Segunda Via</a></li>
@@ -27,15 +39,28 @@
         </ul>
       </li>
 
-      <li><a routerLink="/about" routerLinkActive="active">Sobre</a></li>
-      <li><a routerLink="/news" routerLinkActive="active">Notícias</a></li>
-      <li><a routerLink="/contact" routerLinkActive="active">Contato</a></li>
+      <!-- Item de menu: Sobre -->
+      <li>
+        <a routerLink="/about" routerLinkActive="active">Sobre</a>
+      </li>
+
+      <!-- Item de menu: Notícias -->
+      <li>
+        <a routerLink="/news" routerLinkActive="active">Notícias</a>
+      </li>
+
+      <!-- Item de menu: Contato -->
+      <li>
+        <a routerLink="/contact" routerLinkActive="active">Contato</a>
+      </li>
     </ul>
   </nav>
 
+  <!-- ================================
+       BOTÃO DE MENU MOBILE
+       - Aciona a função toggleMenu() para abrir/fechar
+       ================================ -->
   <button class="menu-toggle" (click)="toggleMenu()">
     <span class="material-icons">menu</span>
   </button>
-
-
 </header>

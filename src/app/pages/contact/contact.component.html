@@ -1,44 +1,62 @@
 <main>
+  <!-- =========================
+       Header do site
+       ========================= -->
   <app-header></app-header>
+
+  <!-- =========================
+       Seção de contato principal com título e botões
+       ========================= -->
   <section class="contact-section">
     <div class="container">
+
+      <!-- Cabeçalho da seção de contato -->
       <div class="">
         <div class="contact-header">
           <h2>Entre em <span>Contato</span></h2>
-          <p>Estamos aqui para <strong>ajudar você</strong> com atendimento de qualidade e soluções rápidas.</p>
+          <p>
+            Estamos aqui para <strong>ajudar você</strong> com atendimento de qualidade e soluções rápidas.
+          </p>
         </div>
+
+        <!-- Botões de ação principal -->
         <div class="contact-buttons">
           <button class="btn-primary">Fale Conosco</button>
           <button class="btn-secondary">Ver Horários</button>
         </div>
       </div>
 
-
+      <!-- Cards de contato rápido e links para serviços -->
       <div class="contact-cards">
+        <!-- Atendimento WhatsApp -->
         <div class="card bg-green">
           <i class="fab fa-whatsapp whatsapp"></i>
           <h3>24h</h3>
           <p>Atendimento</p>
         </div>
 
+        <!-- Resposta por Email -->
         <div class="card bg-orange">
           <i class="material-icons">email</i>
           <h3>2h</h3>
           <p>Resposta Email</p>
         </div>
 
+        <!-- Localização física -->
         <div class="card bg-blue">
           <i class="material-icons">place</i>
           <h3>Centro</h3>
           <p>Localização</p>
         </div>
 
+        <!-- Horário de atendimento -->
         <div class="card bg-purple">
           <i class="material-icons">access_time</i>
           <h3>07-19h</h3>
           <p>Seg-Sex</p>
         </div>
 
+        <!-- Links rápidos para serviços -->
         <a class="segunda-via" href="#">
           <span class="material-symbols-outlined icon">water_drop</span>
           Segunda Via
@@ -51,13 +69,19 @@
         </a>
       </div>
     </div>
-
   </section>
 
+  <!-- =========================
+       Seção de informações detalhadas de contato
+       ========================= -->
   <section class="information-section">
     <div class="wrap">
+
+      <!-- Informações de contato detalhadas -->
       <div class="contact-information">
         <h3>Informações de Contato</h3>
+
+        <!-- Telefone / WhatsApp -->
         <div class="wrap-fone">
           <div class="whatsapp">
             <i class="fab fa-whatsapp whatsapp"></i>
@@ -67,21 +91,31 @@
             <span>(99) 98888-8888</span>
           </div>
         </div>
+
+        <!-- Emails de atendimento -->
         <div>
-          <div> <span class="material-symbols-outlined thin-icon email">stacked_email</span></div>
+          <div>
+            <span class="material-symbols-outlined thin-icon email">stacked_email</span>
+          </div>
           <div class="info-item">
             <p>Email</p>
             <span>{{"atendimento@gmail.com"}}</span>
             <span>{{"ouvidoria@gmail.com"}}</span>
           </div>
         </div>
+
+        <!-- Endereço físico -->
         <div>
-          <div> <span class="material-symbols-outlined thin-icon location">location_on</span></div>
+          <div>
+            <span class="material-symbols-outlined thin-icon location">location_on</span>
+          </div>
           <div class="info-item">
             <p>Endereço</p>
             <span>Rua Grande s/n Centro, São João do Soter-MA</span>
           </div>
         </div>
+
+        <!-- Horário de atendimento -->
         <div>
           <div>
             <span class="material-symbols-outlined thin-icon clock">share_eta</span>
@@ -92,15 +126,22 @@
           </div>
         </div>
       </div>
+
+      <!-- Localização no mapa -->
       <div class="cantact-location">
         <h3>Localização</h3>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.9327801817817!2d-43.813288125018026!3d-5.114536294862494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7892ac32f48bc33%3A0xb85827cea7e8c694!2sR.%20Grande%2C%20S%C3%A3o%20Jo%C3%A3o%20do%20Soter%20-%20MA%2C%2065615-000!5e0!3m2!1spt-BR!2sbr!4v1758761054625!5m2!1spt-BR!2sbr"
           width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
+
     </div>
   </section>
 
+  <!-- =========================
+       Footer do site
+       ========================= -->
   <app-footer></app-footer>
 </main>

@@ -1,5 +1,8 @@
 @import "../../../color-variables.scss";
 
+/* =========================================================
+   HEADER PRINCIPAL
+   ========================================================= */
 header {
   display: flex;
   justify-content: space-between;
@@ -9,16 +12,23 @@ header {
   color: $white;
   border-bottom: 0.1px solid $gray-100;
 
+  /* Mantém o header fixo no topo da página */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
 
+  /* ================================
+       LOGO
+       ================================ */
   .logo img {
     height: 3.1rem;
   }
 
+  /* ================================
+       NAVEGAÇÃO PRINCIPAL
+       ================================ */
   nav {
     ul {
       display: flex;
@@ -30,7 +40,6 @@ header {
         display: flex;
         align-items: center;
 
-
         a {
           text-decoration: none;
           color: #fff;
@@ -39,30 +48,33 @@ header {
           display: flex;
           align-items: center;
 
+          /* Estado ativo do link */
           &.active {
             background: $medium-blue;
             color: $white;
             padding: 0.5rem;
-            border-radius: 0.5rem 0.5rem;
+            border-radius: 0.5rem;
             border-bottom: 2px solid $light-green;
           }
 
+          /* Estado hover do link */
           &:hover {
             background: $medium-blue;
             padding: 0.5rem;
-            border-radius: 0.5rem 0.5rem;
+            border-radius: 0.5rem;
             border-bottom: 1px solid $white;
           }
         }
 
-        /* ====== Dropdown desktop ====== */
+        /* ================================
+             DROPDOWN DESKTOP
+             ================================ */
         .dropdown {
           display: none;
           position: absolute;
           top: 100%;
           left: 0;
           list-style: none;
-          //background-color: $primary-blue;
           padding: 0.5rem 0;
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
           border-radius: 4px;
@@ -74,7 +86,7 @@ header {
             width: 15rem;
             flex-direction: column;
             gap: 1rem;
-            padding: 1rem 1rem;
+            padding: 1rem;
           }
 
           li a {
@@ -90,6 +102,7 @@ header {
           }
         }
 
+        /* Exibe o dropdown ao passar o mouse */
         &:hover .dropdown {
           display: flex;
         }
@@ -97,6 +110,9 @@ header {
     }
   }
 
+  /* ================================
+       BOTÃO DE MENU MOBILE
+       ================================ */
   .menu-toggle {
     display: none;
     background: none;
@@ -108,21 +124,25 @@ header {
   }
 }
 
-/* ======= MOBILE ========= */
+/* =========================================================
+   RESPONSIVIDADE MOBILE
+   ========================================================= */
 @media (max-width: 768px) {
   header {
     padding: 1rem 1.5rem;
 
+    /* Exibe botão de menu no mobile */
     .menu-toggle {
       display: block;
     }
 
+    /* Painel de navegação mobile */
     nav {
       position: fixed;
       top: 0;
-      right: -100%; // escondido
-      height: 100vh; // ocupa altura total
-      width: 80%; // largura do painel
+      right: -100%; // inicialmente escondido
+      height: 100vh; // ocupa toda altura da tela
+      width: 80%;
       max-width: 320px;
       background-color: $primary-blue;
       flex-direction: column;
@@ -137,11 +157,14 @@ header {
         width: 100%;
       }
 
+      /* Ativa o menu quando menuActive = true */
       &.active {
         right: 0;
       }
 
-      /* === Submenu no mobile === */
+      /* ================================
+           SUBMENU MOBILE
+           ================================ */
       ul li {
         width: 100%;
 
@@ -153,7 +176,7 @@ header {
         }
 
         .dropdown {
-          position: static; // sem absolute
+          position: static; // remove position absolute
           box-shadow: none;
           background: none;
           padding: 0;
@@ -165,6 +188,7 @@ header {
           }
         }
 
+        /* Exibe submenu quando li.open = true */
         &.open>.dropdown {
           display: flex;
         }

@@ -4,12 +4,12 @@
 @import "../../../color-variables.scss";
 
 /* ===========================================================
-      Página de Notícias
+         Página de Notícias
       =========================================================== */
 .news-page {
 
   /* -----------------------------------------------------------
-        HERO
+           HERO - seção de destaque da página
         ----------------------------------------------------------- */
   .news-hero {
     text-align: center;
@@ -35,7 +35,7 @@
   }
 
   /* -----------------------------------------------------------
-        HEADER DE NOTÍCIAS
+           HEADER DE NOTÍCIAS - título e subtítulo da seção
         ----------------------------------------------------------- */
   .new-header {
     padding: 2rem;
@@ -52,7 +52,7 @@
   }
 
   /* -----------------------------------------------------------
-        CAROUSEL
+           CAROUSEL - carrossel de notícias
         ----------------------------------------------------------- */
   .carousel {
     display: flex;
@@ -96,6 +96,7 @@
           margin-bottom: 0.5rem;
         }
 
+        /* Informações de data e visualizações */
         .data {
           display: flex;
           justify-content: space-between;
@@ -126,12 +127,13 @@
           text-decoration: none;
 
           &:hover {
-            color: $red-500
+            color: $red-500;
           }
         }
       }
     }
 
+    /* Botão de controle do carrossel */
     .carousel-control {
       background: $primary-blue;
       color: $white;
@@ -152,7 +154,7 @@
       }
     }
 
-    /* --- Responsividade --- */
+    /* Responsividade do carrossel */
     @media (max-width: 768px) {
       .carousel-wrapper {
         flex-direction: column;
@@ -166,7 +168,7 @@
   }
 
   /* -----------------------------------------------------------
-        FILTRO DE NOTÍCIAS
+           FILTRO DE NOTÍCIAS
         ----------------------------------------------------------- */
   .filter-section {
     background: $blue-200;
@@ -200,7 +202,6 @@
       gap: 0.5rem;
       color: $primary-blue;
 
-      /* Ícone do filtro */
       .icon {
         font-size: 2rem;
         font-weight: 200;
@@ -212,6 +213,7 @@
       gap: -1rem;
     }
 
+    /* Badges de filtros ativos */
     .active-filters {
       display: flex;
       flex-wrap: wrap;
@@ -263,14 +265,13 @@
       }
     }
 
+    /* Estilo básico de select */
     select {
       border-radius: 12px;
       padding: 0.6rem 1rem;
       border: 1px solid $gray-300;
       background-color: $white;
       appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
       background-repeat: no-repeat;
       background-position: right 0.8rem center;
       background-size: 1rem;
@@ -354,7 +355,7 @@
   }
 
   /* -----------------------------------------------------------
-        LISTA DE NOTÍCIAS
+           LISTA DE NOTÍCIAS
         ----------------------------------------------------------- */
   .news-list {
     max-width: 1200px;
@@ -365,7 +366,6 @@
 
     .news-item {
       max-width: 100%;
-      width: auto;
       display: flex;
       flex-direction: row;
       padding: 1rem;
@@ -390,63 +390,61 @@
         flex-direction: column;
         gap: 0.5rem;
         padding: 1rem;
+      }
 
-        .news-item__meta {
-          display: flex;
-          justify-content: space-between;
+      .news-item__meta {
+        display: flex;
+        justify-content: space-between;
+      }
 
-          .news-item__date {
-            color: $gray-700;
-            font-size: 1rem;
-          }
+      .news-item__date {
+        color: $gray-700;
+        font-size: 1rem;
+      }
 
-          .news-item__category {
-            color: $white;
-            padding: 0.3rem 1rem;
-            border-radius: 8px;
-            font-size: 1rem;
-          }
+      .news-item__category {
+        color: $white;
+        padding: 0.3rem 1rem;
+        border-radius: 8px;
+        font-size: 1rem;
+      }
 
-          .avisos {
-            background: $orange-category;
-          }
+      .avisos {
+        background: $orange-category;
+      }
 
-          .abastecimento {
-            background: $green-500;
-          }
-        }
+      .abastecimento {
+        background: $green-500;
+      }
 
-        .news-item__title {
-          font-size: 1.6rem;
-          color: $gray-800;
-        }
+      .news-item__title {
+        font-size: 1.6rem;
+        color: $gray-800;
+      }
 
-        .news-item__excerpt {
-          font-size: 1rem;
-        }
+      .news-item__excerpt {
+        font-size: 1rem;
+      }
 
-        .news-item__link {
-          display: inline-block;
-          padding: 0.4rem 0.8rem;
-          background: $medium-blue;
-          color: $white;
-          border-radius: 6px;
-          text-decoration: none;
-          transition: background 0.3s ease, transform 0.2s ease;
-          width: auto;
-          align-self: flex-start;
+      .news-item__link {
+        display: inline-block;
+        padding: 0.4rem 0.8rem;
+        background: $medium-blue;
+        color: $white;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: background 0.3s ease, transform 0.2s ease;
+        width: auto;
+        align-self: flex-start;
 
-          &:hover {
-            background: darken($medium-blue, 10%);
-            transform: translateY(-2px);
-          }
+        &:hover {
+          background: darken($medium-blue, 10%);
+          transform: translateY(-2px);
         }
       }
-    }
 
-    /* Responsivo: empilha imagem e texto */
-    @media (max-width: 768px) {
-      .news-item {
+      /* Responsivo: empilha imagem e texto */
+      @media (max-width: 768px) {
         flex-direction: column;
         align-items: center;
         padding: 1rem;
@@ -476,14 +474,12 @@
   }
 
   /* -----------------------------------------------------------
-        PAGINAÇÃO
+           PAGINAÇÃO
         ----------------------------------------------------------- */
-
   .pagination {
     display: flex;
     justify-content: center;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0;
     gap: .5rem;
 
     button {
@@ -492,18 +488,17 @@
       background: #fff;
       cursor: pointer;
       border-radius: 4px;
+    }
 
-      &.active {
-        background: #007bff;
-        color: #fff;
-        border-color: #007bff;
-      }
+    button.active {
+      background: #007bff;
+      color: #fff;
+      border-color: #007bff;
     }
   }
 
-
   /* -----------------------------------------------------------
-        ESTATÍSTICAS
+           ESTATÍSTICAS
         ----------------------------------------------------------- */
   .news-stats {
     background: linear-gradient(135deg, #0077b6, #00b4d8);
@@ -550,7 +545,7 @@
   }
 
   /* -----------------------------------------------------------
-        RESPONSIVIDADE GERAL
+           RESPONSIVIDADE GERAL
         ----------------------------------------------------------- */
   @media (max-width: 1024px) {
     .carousel-item {
@@ -608,7 +603,7 @@
 }
 
 /* -----------------------------------------------------------
-      RESPONSIVIDADE EXTRA (fora de .news-page)
+         RESPONSIVIDADE EXTRA PARA TELAS MUITO PEQUENAS
       ----------------------------------------------------------- */
 @media (max-width: 480px) {
   .hero-content h1 {

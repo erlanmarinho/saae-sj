@@ -1,19 +1,28 @@
 <main class="news-page">
+  <!-- Header do site -->
   <app-header></app-header>
 
+  <!-- Container principal da página -->
   <div class="wrap container">
+
+    <!-- Conteúdo principal -->
     <div class="main-container">
+
+      <!-- Seção com título e introdução -->
       <div class="main-content">
         <div class="page-title">
+          <!-- Tag institucional da notícia -->
           <span class="institutional-tag">INSTITUCIONAL</span>
+          <!-- Título da notícia -->
           <h2>Campanha de Conscientização</h2>
         </div>
 
+        <!-- Introdução em destaque -->
         <p class="highlight-intro">
-          Gestores e equipe técnica do Serviço Autônomo de Água e Esgoto (SAAE) de São João do Soter estão promovendo um
-          programa de conscientização sobre o desperdício de água.
+          Gestores e equipe técnica do SAAE estão promovendo um programa de conscientização sobre o desperdício de água.
         </p>
 
+        <!-- Informações da notícia: data, editor e visualizações -->
         <div class="info">
           <div class="info-data">
             <span class="material-symbols-outlined thin-icon ">pace</span>
@@ -21,17 +30,19 @@
           </div>
           <div class="info-data">
             <span class="material-symbols-outlined thin-icon ">person</span>
-            <p>sharlene
-              (EDITOR)</p>
+            <p>sharlene (EDITOR)</p>
           </div>
           <div class="info-data">
             <span class="material-symbols-outlined thin-icon ">visibility</span>
             <p>70 visualizações</p>
           </div>
-
         </div>
       </div>
+
+      <!-- Corpo do artigo -->
       <div class="article-body">
+
+        <!-- Links de compartilhamento em redes sociais -->
         <div class="social-links">
           <p>Compartilhe: </p>
           <a class="link-item facebook" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -39,43 +50,33 @@
           <a class="link-item linkedin-in" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
           <a class="link-item twitter" href="#"><i class="fab fa-twitter"></i></a>
         </div>
+
+        <!-- Imagem destacada do artigo -->
         <div class="image-container">
           <img
             src="https://painel.siganet.net.br/upload/0000000002/cms/images/thumbs/570x471_ccf24941832dc3984f4025bf970b63cd.jpg"
             alt="">
-
         </div>
+
+        <!-- Subtítulo ou chamada do artigo -->
         <span class="span-text">Preservação da Água: Um Desafio Urgente para a Sociedade</span>
 
+        <!-- Texto principal do artigo -->
         <p class="main-text">
-          O desperdício de água é um dos principais desafios ambientais da atualidade, impactando diretamente a
-          disponibilidade desse recurso essencial para a vida. Cada gota desperdiçada representa energia, tempo e
-          recursos desperdiçados, além de contribuir para o agravamento da escassez hídrica em diversas regiões do país.
-          O aumento do consumo urbano, aliado à falta de conscientização, torna urgente a adoção de práticas
-          responsáveis no dia a dia.<br><br>
-
-          Especialistas reforçam que pequenas atitudes podem fazer grande diferença. Fechar a torneira enquanto escova
-          os dentes, reutilizar água da lavagem de roupas ou louças e consertar vazamentos são medidas simples que
-          reduzem significativamente o consumo. Além disso, o uso de tecnologias eficientes, como torneiras com
-          temporizador e sistemas de reaproveitamento, contribui para o uso sustentável da água, tanto em residências
-          quanto em empresas.
+          O desperdício de água é um dos principais desafios ambientais...
         </p>
+
+        <!-- Segunda imagem dentro do artigo -->
         <div class="image-container">
           <img src="https://cdn.pixabay.com/photo/2016/10/10/11/10/bitcoin-faucet-1728101_1280.jpg" alt="">
-
         </div>
 
+        <!-- Continuação do texto -->
         <p class="main-text">
-          A preservação da água é responsabilidade de todos: governos, instituições, empresas e cidadãos. Campanhas
-          educativas, políticas públicas eficazes e incentivo à conscientização coletiva são fundamentais para garantir
-          que esse recurso vital esteja disponível para as gerações futuras. Agir de forma consciente hoje significa
-          proteger a vida, a economia e o meio ambiente amanhã.
-
-          Se quiser, posso criar uma versão ainda mais jornalística, com títulos de destaque, estatísticas e chamadas
-          visuais, pronta para colocar em um site de notícias.
+          A preservação da água é responsabilidade de todos...
         </p>
 
-
+        <!-- Rodapé do artigo com informações do editor -->
         <div class="article-footer">
           <div class="info">
             <div class="icon">
@@ -85,39 +86,38 @@
               <div class="editor">
                 <span class="editor-name">Sharlene</span>
               </div>
-
               <div class="editor-institution">
                 <span class="editor-role">EDITOR</span> •
                 <span class="institution">SAAE São João do Soter</span>
               </div>
-
             </div>
-
           </div>
+
+          <!-- Biografia do editor -->
           <p class="editor-bio">
-            Jornalista especializado em comunicação institucional e saneamento básico, responsável pela cobertura das
-            atividades e projetos do SAAE Caxias.
+            Jornalista especializado em comunicação institucional e saneamento básico...
           </p>
         </div>
-
       </div>
-
-
     </div>
 
+    <!-- Barra lateral com links de acesso rápido -->
     <aside class="quick-access">
       <h2>Acesso Rápido</h2>
       <ul>
-        <li><a routerLink="/fale-conosco" class="whatsapp">
+        <li>
+          <a routerLink="/fale-conosco" class="whatsapp">
             <i class="fab fa-whatsapp icon-whatsapp"></i>
             Fale Conosco
-          </a></li>
-        <li><a routerLink="/services" routerLinkActive="active" class="services">
+          </a>
+        </li>
+        <li>
+          <a routerLink="/services" routerLinkActive="active" class="services">
             <span class="material-symbols-outlined icon">settings_account_box</span>
             Solicitar Serviços
-          </a></li>
-
-
+          </a>
+        </li>
+        <!-- Links adicionais rápidos -->
         <a class="segunda-via" href="#">
           <span class="material-symbols-outlined icon">water_drop</span>
           Segunda Via
@@ -127,5 +127,6 @@
     </aside>
   </div>
 
+  <!-- Footer do site -->
   <app-footer></app-footer>
 </main>

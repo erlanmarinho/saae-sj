@@ -1,5 +1,7 @@
 @import "../../../color-variables.scss";
 
+// =================== WRAP CONTAINER ===================
+// Container principal que envolve conteúdo e sidebar
 .wrap.container {
   display: flex;
   gap: 2rem;
@@ -7,38 +9,38 @@
   margin: 2rem auto;
   padding: 5rem 1rem;
 
+  // =================== MAIN CONTAINER ===================
   .main-container {
     flex: 1; // ocupa todo o espaço restante
 
-
+    // ------------------ MAIN CONTENT ------------------
     .main-content {
       display: flex;
       flex-direction: column;
       padding: 1rem;
+      border-bottom: 1px solid $gray-300;
 
-      border-bottom: 1px solid $gray-300 ;
-
+      // Título da página e tag institucional
       .page-title {
         display: block;
         margin-bottom: 1rem;
         font-size: 1.5rem;
 
-
+        // Tag de categoria ou institucional
         .institutional-tag {
-          display: inline-block; // Garante que o span não ocupe a linha inteira
-          background: $medium-blue; // Cor do fundo
-          color: $white; // Texto visível
-          padding: 0.2rem 0.6rem; // Pequeno espaçamento interno
-          border-radius: 8px; // Cantos arredondados
+          display: inline-block;
+          background: $medium-blue;
+          color: $white;
+          padding: 0.2rem 0.6rem;
+          border-radius: 8px;
           margin-bottom: 1rem;
-          font-size: 0.8rem; // Tamanho do texto ajustável
+          font-size: 0.8rem;
         }
-
-
       }
 
+      // Introdução em destaque
       .highlight-intro {
-        border-left: 3px solid $medium-blue ;
+        border-left: 3px solid $medium-blue;
         border-radius: 8px;
         padding: 0.5rem;
         color: $gray-800;
@@ -46,6 +48,8 @@
       }
     }
 
+    // ------------------ INFO ------------------
+    // Informações da notícia: data, autor e visualizações
     .info {
       display: flex;
       flex-direction: row;
@@ -61,7 +65,6 @@
         justify-content: center;
         gap: 0.5rem;
 
-
         .thin-icon {
           font-size: 1rem;
           font-weight: 300;
@@ -70,14 +73,10 @@
     }
   }
 
-  .info {
-    display: flex;
-    flex-direction: row;
-  }
-
+  // =================== ARTICLE BODY ===================
   .article-body {
 
-    // ===== Social Links =====
+    // -------- Social Links --------
     .social-links {
       display: flex;
       align-items: center;
@@ -107,6 +106,7 @@
           transform: scale(1.2);
         }
 
+        // Cores específicas para cada rede social
         &.facebook {
           background-color: #3b5998;
 
@@ -147,17 +147,17 @@
       }
     }
 
-    // ===== Imagem =====
+    // -------- Imagem do artigo --------
     .image-container {
       display: flex;
       gap: 5rem;
       flex-direction: column;
       width: 100%;
-      max-height: 500px; // você pode ajustar
+      max-height: 500px;
       overflow: hidden;
       margin-bottom: 1.5rem;
-      border-radius: 12px; // bordas arredondadas
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); // sombra suave
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 
       img {
         width: 100%;
@@ -165,22 +165,21 @@
         object-fit: cover;
         display: block;
       }
-
-
     }
 
+    // Subtítulo ou chamada do artigo
     .span-text {
-
       color: $gray-600;
       font-style: italic;
-
     }
 
+    // Texto principal do artigo
     .main-text {
       font-size: 1.3rem;
       margin-top: 1rem;
     }
 
+    // -------- Article Footer (Editor Info) --------
     .article-footer {
       margin-top: 3rem;
       padding: 1.5rem;
@@ -198,15 +197,13 @@
         .thin-icon {
           font-size: 3rem;
           font-weight: 200;
-          color: $white
+          color: $white;
         }
       }
-
 
       .editor-info {
         display: flex;
         flex-direction: column;
-
         gap: 0.5rem;
         font-weight: 500;
 
@@ -218,26 +215,21 @@
             font-weight: bold;
             font-size: 1.3rem;
             color: #007bff;
-
           }
-
-
         }
 
         .editor-institution {
           font-size: 1rem;
-        }
 
+          .editor-role {
+            font-style: italic;
+            color: #888;
+          }
 
-
-        .editor-role {
-          font-style: italic;
-          color: #888;
-        }
-
-        .institution {
-          font-weight: 600;
-          color: #333;
+          .institution {
+            font-weight: 600;
+            color: #333;
+          }
         }
       }
 
@@ -248,8 +240,7 @@
       }
     }
 
-
-    // ===== Texto =====
+    // Texto geral dentro do article-body
     p {
       font-size: 1rem;
       line-height: 1.6;
@@ -257,17 +248,14 @@
     }
   }
 
-
-
-
+  // =================== QUICK ACCESS (SIDEBAR) ===================
   aside.quick-access {
-    width: 250px; // largura fixa da sidebar
-    position: sticky; // fixa a sidebar
-    top: 200px; // distância do topo da tela
+    width: 250px;
+    position: sticky;
+    top: 200px;
     background: $blue-200;
-    //padding: 1rem;
     border-radius: 8px;
-    height: fit-content; // altura ajusta ao conteúdo
+    height: fit-content;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 
     h2 {
@@ -276,7 +264,7 @@
       background: $medium-blue;
       padding: 1rem;
       border-radius: 8px 8px 0 0;
-      color: $white
+      color: $white;
     }
 
     .icon-whatsapp {
@@ -291,10 +279,8 @@
       text-align: center;
       gap: 0.5rem;
       margin: 1rem 1rem;
-      color: $gray-800
+      color: $gray-800;
     }
-
-
 
     .segunda-via {
       margin-top: 1rem;
@@ -310,7 +296,6 @@
       font-weight: bold;
       text-decoration: none;
       transition: background 0.3s;
-      margin: 1rem 1rem;
 
       &:hover {
         background: linear-gradient(90deg, #0072ff, #00c6ff);
@@ -338,12 +323,12 @@
     }
   }
 
-  // Responsividade para telas menores
+  // =================== RESPONSIVE ===================
   @media (max-width: 768px) {
     flex-direction: column;
 
     .main-container {
-      padding: 1rem 0; // ajusta padding em mobile
+      padding: 1rem 0;
 
       .info {
         flex-direction: column;
@@ -352,7 +337,6 @@
     }
 
     aside.quick-access {
-      //position: relative; // deixa a sidebar rolar normalmente
       width: 100%;
       margin-top: 2rem;
     }
